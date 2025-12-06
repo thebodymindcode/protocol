@@ -845,6 +845,226 @@
             letter-spacing: 1px;
         }
 
+        /* New Year Block */
+        .new-year-block {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--text-dark) 0%, #1a1408 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .new-year-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(166,139,91,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .ny-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .new-year-block .section-label {
+            color: var(--accent-gold);
+        }
+
+        .new-year-block .section-title {
+            color: var(--bg-cream);
+            margin-bottom: 16px;
+        }
+
+        .ny-subtitle {
+            color: rgba(245, 240, 232, 0.7);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Timeline */
+        .ny-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 700px;
+            margin: 60px auto;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 30px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(139,115,85,0.3), var(--accent-gold), rgba(139,115,85,0.3));
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--text-dark);
+            border: 2px solid rgba(139,115,85,0.5);
+            margin-bottom: 20px;
+        }
+
+        .timeline-dot.active {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -22px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 40px rgba(166, 139, 91, 0.4);
+        }
+
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .timeline-days {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            line-height: 1;
+            margin-top: -45px;
+        }
+
+        .timeline-icon svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .timeline-text {
+            font-size: 13px;
+            color: rgba(245, 240, 232, 0.6);
+            line-height: 1.4;
+        }
+
+        /* Formula */
+        .ny-formula {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+
+        .formula-item {
+            padding: 12px 20px;
+            border: 1px solid rgba(166, 139, 91, 0.3);
+            background: rgba(166, 139, 91, 0.05);
+        }
+
+        .formula-item.highlight {
+            border-color: var(--accent-gold);
+            background: rgba(166, 139, 91, 0.15);
+        }
+
+        .formula-text {
+            font-size: 14px;
+            color: var(--bg-cream);
+            letter-spacing: 0.5px;
+        }
+
+        .formula-item.highlight .formula-text {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .formula-arrow {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        /* Key Points */
+        .ny-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .ny-point {
+            text-align: center;
+            padding: 30px;
+            background: rgba(245, 240, 232, 0.03);
+            border: 1px solid rgba(166, 139, 91, 0.15);
+        }
+
+        .ny-point-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .ny-point-text strong {
+            display: block;
+            font-size: 14px;
+            color: var(--bg-cream);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .ny-point-text span {
+            font-size: 13px;
+            color: rgba(245, 240, 232, 0.6);
+            line-height: 1.6;
+        }
+
+        /* Final Text */
+        .ny-final {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .ny-final p {
+            font-size: 1.1rem;
+            color: rgba(245, 240, 232, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .ny-final .ny-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-top: 20px;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 100px 24px;
@@ -1139,12 +1359,29 @@
             .comparison-arrow svg {
                 transform: rotate(90deg);
             }
+            .ny-points {
+                grid-template-columns: 1fr;
+            }
+            .ny-formula {
+                flex-direction: column;
+            }
+            .formula-arrow {
+                transform: rotate(90deg);
+            }
         }
 
         @media (max-width: 600px) {
             .stats { grid-template-columns: 1fr; }
             .pricing-card { padding: 35px 24px; }
             .breathing-square { width: 220px; height: 220px; }
+            .ny-timeline {
+                flex-direction: column;
+                gap: 40px;
+                align-items: center;
+            }
+            .timeline-line {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1762,6 +1999,112 @@
                         <strong>Дмитрий</strong>
                         Разработчик, 31 год
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Year Transformation Block -->
+    <section class="new-year-block">
+        <div class="container">
+            <div class="ny-content">
+                <div class="ny-header">
+                    <div class="section-label">Время пришло</div>
+                    <h2 class="section-title">Зайди в новый год другим человеком</h2>
+                    <p class="ny-subtitle">Не с очередным списком желаний. А с мозгом, который работает по-другому.</p>
+                </div>
+
+                <!-- Timeline Infographic -->
+                <div class="ny-timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item start">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-label">Сейчас</div>
+                            <div class="timeline-icon">
+                                <svg viewBox="0 0 50 50">
+                                    <circle cx="25" cy="25" r="22" fill="none" stroke="rgba(139,115,85,0.3)" stroke-width="1"/>
+                                    <path d="M15 20 Q25 35 20 40" stroke="rgba(139,115,85,0.4)" fill="none"/>
+                                    <path d="M25 15 Q35 25 30 38" stroke="rgba(139,115,85,0.4)" fill="none"/>
+                                    <path d="M32 18 Q40 28 35 40" stroke="rgba(139,115,85,0.4)" fill="none"/>
+                                </svg>
+                            </div>
+                            <div class="timeline-text">Старые паттерны<br>Те же сценарии</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item middle">
+                        <div class="timeline-dot active"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-days">28</div>
+                            <div class="timeline-label">дней</div>
+                            <div class="timeline-text">Перепрошивка<br>нейронных связей</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item end">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-label">Новый год</div>
+                            <div class="timeline-icon transformed">
+                                <svg viewBox="0 0 50 50">
+                                    <circle cx="25" cy="25" r="22" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"/>
+                                    <circle cx="25" cy="25" r="14" fill="none" stroke="rgba(166,139,91,0.4)" stroke-width="1"/>
+                                    <circle cx="25" cy="25" r="6" fill="var(--accent-gold)" opacity="0.6"/>
+                                </svg>
+                            </div>
+                            <div class="timeline-text">Новое мышление<br>Новая реальность</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formula -->
+                <div class="ny-formula">
+                    <div class="formula-item">
+                        <span class="formula-text">Новое мышление</span>
+                    </div>
+                    <div class="formula-arrow">→</div>
+                    <div class="formula-item">
+                        <span class="formula-text">Новое состояние</span>
+                    </div>
+                    <div class="formula-arrow">→</div>
+                    <div class="formula-item">
+                        <span class="formula-text">Новые действия</span>
+                    </div>
+                    <div class="formula-arrow">→</div>
+                    <div class="formula-item highlight">
+                        <span class="formula-text">Новая жизнь</span>
+                    </div>
+                </div>
+
+                <!-- Key Points -->
+                <div class="ny-points">
+                    <div class="ny-point">
+                        <div class="ny-point-number">28</div>
+                        <div class="ny-point-text">
+                            <strong>дней — не случайность</strong>
+                            <span>Именно столько нужно мозгу для формирования новых нейронных связей. Не 21 день (это миф). 28 — научно обоснованное окно для перепрошивки.</span>
+                        </div>
+                    </div>
+                    <div class="ny-point">
+                        <div class="ny-point-number">16</div>
+                        <div class="ny-point-text">
+                            <strong>минут — это всё</strong>
+                            <span>Не часы медитаций. Не ретриты на неделю. 16 минут в день, которые перестраивают архитектуру мозга. Меньше, чем серия сериала.</span>
+                        </div>
+                    </div>
+                    <div class="ny-point">
+                        <div class="ny-point-number">1</div>
+                        <div class="ny-point-text">
+                            <strong>решение — прямо сейчас</strong>
+                            <span>Каждый год одно и то же: списки, обещания, «с понедельника». К февралю — всё по-старому. Этот год может быть другим.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final CTA Text -->
+                <div class="ny-final">
+                    <p>Хватит ходить по старым сценариям.</p>
+                    <p>Хватит откладывать на «после праздников».</p>
+                    <p class="ny-highlight">Начни сейчас — и встреть новый год в другом состоянии.</p>
                 </div>
             </div>
         </div>
