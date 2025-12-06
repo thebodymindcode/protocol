@@ -57,6 +57,12 @@
             z-index: 1000;
         }
 
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -123,14 +129,8 @@
         }
 
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .cta-button {
@@ -158,64 +158,48 @@
             box-shadow: 0 20px 40px var(--shadow);
         }
 
-        .cta-button svg {
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover svg {
-            transform: translateX(4px);
-        }
-
         /* Stats Section */
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1px;
             background: var(--accent-gold);
-            margin: 0;
         }
 
         .stat-item {
             background: var(--bg-warm);
-            padding: 60px 24px;
+            padding: 50px 20px;
             text-align: center;
             transition: background 0.3s ease;
         }
 
-        .stat-item:hover {
-            background: var(--bg-cream);
-        }
+        .stat-item:hover { background: var(--bg-cream); }
 
         .stat-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 400;
             color: var(--text-dark);
             line-height: 1;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-brown);
         }
 
-        /* Problem Section */
-        .problem {
-            padding: 120px 24px;
+        /* Triggers Section - стиль как у dobrozdravin */
+        .triggers {
+            padding: 100px 24px;
             background: var(--white);
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header {
+        .triggers .section-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .section-label {
@@ -227,33 +211,90 @@
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             color: var(--text-dark);
             max-width: 800px;
             margin: 0 auto;
         }
 
+        .trigger-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trigger-item {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--bg-warm);
+        }
+
+        .trigger-item:last-child { border-bottom: none; }
+
+        .trigger-false {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .trigger-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .trigger-icon.false { background: rgba(139, 115, 85, 0.1); color: var(--accent-gold); }
+        .trigger-icon.true { background: var(--accent-gold); color: var(--white); }
+
+        .trigger-text {
+            font-size: 17px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .trigger-text strong {
+            color: var(--accent-gold);
+        }
+
+        .trigger-truth {
+            padding-left: 44px;
+            color: var(--text-brown);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 100px 24px;
+            background: var(--bg-cream);
+        }
+
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            gap: 24px;
+            margin-top: 60px;
         }
 
         .problem-card {
             padding: 40px;
-            background: var(--bg-cream);
-            border-left: 2px solid var(--accent-gold);
+            background: var(--white);
+            border-left: 3px solid var(--accent-gold);
             transition: all 0.3s ease;
         }
 
         .problem-card:hover {
             transform: translateX(8px);
-            background: var(--bg-warm);
+            box-shadow: 0 10px 40px var(--shadow);
         }
 
         .problem-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--text-dark);
         }
 
@@ -262,115 +303,162 @@
             font-size: 15px;
         }
 
-        /* Science Section */
+        /* Science Section with Infographic */
         .science {
-            padding: 120px 24px;
+            padding: 100px 24px;
             background: var(--text-dark);
             color: var(--bg-cream);
-            position: relative;
-            overflow: hidden;
         }
 
-        .science::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(166, 139, 91, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
+        .science .section-title { color: var(--bg-cream); }
 
-        .science .section-title {
-            color: var(--bg-cream);
-        }
-
-        .science-content {
+        .science-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            gap: 60px;
             margin-top: 60px;
         }
 
         .science-text h3 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             color: var(--accent-warm);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .science-text p {
-            color: rgba(245, 240, 232, 0.8);
-            margin-bottom: 24px;
+            color: rgba(245, 240, 232, 0.85);
+            margin-bottom: 20px;
             font-size: 15px;
         }
 
         .science-quote {
             border-left: 2px solid var(--accent-gold);
-            padding-left: 24px;
+            padding-left: 20px;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--bg-cream);
-            margin-top: 40px;
+            margin: 30px 0;
         }
 
-        .science-visual {
-            position: relative;
+        .science-quote cite {
+            display: block;
+            font-size: 0.75rem;
+            font-style: normal;
+            color: rgba(245, 240, 232, 0.6);
+            margin-top: 10px;
+            letter-spacing: 1px;
         }
 
-        .brain-stats {
-            display: grid;
-            gap: 24px;
-        }
-
-        .brain-stat {
+        /* Infographic */
+        .infographic {
             background: rgba(245, 240, 232, 0.05);
             border: 1px solid rgba(166, 139, 91, 0.3);
-            padding: 32px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
+            padding: 40px;
+        }
+
+        .infographic-title {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Brain SVG */
+        .brain-visual {
+            margin-bottom: 30px;
+        }
+
+        .brain-svg {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .brain-region {
             transition: all 0.3s ease;
         }
 
-        .brain-stat:hover {
-            background: rgba(245, 240, 232, 0.1);
-            border-color: var(--accent-gold);
+        .brain-region:hover {
+            fill: rgba(166, 139, 91, 0.3);
         }
 
-        .brain-stat-icon {
-            width: 60px;
-            height: 60px;
-            border: 1px solid var(--accent-gold);
-            display: flex;
+        .brain-changes {
+            display: grid;
+            gap: 20px;
+        }
+
+        .brain-change {
+            display: grid;
+            grid-template-columns: 140px 1fr 80px;
             align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(166, 139, 91, 0.2);
         }
 
-        .brain-stat-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--accent-gold);
-        }
+        .brain-change:last-child { border-bottom: none; }
 
-        .brain-stat h4 {
-            font-size: 1.25rem;
-            color: var(--bg-cream);
-            margin-bottom: 8px;
-        }
-
-        .brain-stat p {
+        .brain-area {
             font-size: 13px;
-            color: rgba(245, 240, 232, 0.6);
-            margin: 0;
+            color: var(--bg-cream);
+            font-weight: 500;
+        }
+
+        .brain-bar {
+            height: 8px;
+            background: rgba(166, 139, 91, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .brain-bar-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: 4px;
+            animation: growBar 1.5s ease-out forwards;
+        }
+
+        @keyframes growBar {
+            from { width: 0; }
+        }
+
+        .brain-result {
+            font-size: 12px;
+            color: var(--accent-warm);
+            text-align: right;
+        }
+
+        /* Research Table */
+        .research-table {
+            margin-top: 60px;
+        }
+
+        .research-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(166, 139, 91, 0.2);
+        }
+
+        .research-source {
+            font-size: 12px;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .research-finding {
+            font-size: 14px;
+            color: rgba(245, 240, 232, 0.8);
         }
 
         /* Protocol Section */
         .protocol {
-            padding: 120px 24px;
+            padding: 100px 24px;
             background: var(--bg-cream);
         }
 
@@ -384,42 +472,37 @@
 
         .protocol-step {
             background: var(--white);
-            padding: 60px 40px;
+            padding: 50px 30px;
             text-align: center;
-            position: relative;
             transition: all 0.3s ease;
         }
 
-        .protocol-step:hover {
-            background: var(--bg-cream);
-        }
+        .protocol-step:hover { background: var(--bg-cream); }
 
         .step-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 400;
             color: var(--bg-warm);
             line-height: 1;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             transition: color 0.3s ease;
         }
 
-        .protocol-step:hover .step-number {
-            color: var(--accent-gold);
-        }
+        .protocol-step:hover .step-number { color: var(--accent-gold); }
 
         .protocol-step h3 {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             color: var(--text-dark);
             margin-bottom: 8px;
         }
 
         .step-time {
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent-gold);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .protocol-step p {
@@ -427,10 +510,70 @@
             font-size: 14px;
         }
 
-        /* What's Inside Section */
-        .inside {
-            padding: 120px 24px;
+        /* Breathing Infographic */
+        .breathing-section {
+            padding: 80px 24px;
             background: var(--bg-warm);
+        }
+
+        .breathing-visual {
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .breathing-square {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .breathing-label {
+            position: absolute;
+            font-size: 13px;
+            color: var(--text-brown);
+            text-align: center;
+        }
+
+        .breathing-label.top { top: -35px; left: 50%; transform: translateX(-50%); }
+        .breathing-label.bottom { bottom: -35px; left: 50%; transform: translateX(-50%); }
+        .breathing-label.left { left: -80px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+        .breathing-label.right { right: -80px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+        .breathing-time {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        .breathing-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .breathing-center span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+        }
+
+        .breathing-center small {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+        }
+
+        /* What's Inside */
+        .inside {
+            padding: 100px 24px;
+            background: var(--white);
         }
 
         .inside-grid {
@@ -441,10 +584,10 @@
         }
 
         .inside-item {
-            background: var(--white);
-            padding: 40px;
+            background: var(--bg-cream);
+            padding: 35px;
             display: flex;
-            gap: 24px;
+            gap: 20px;
             align-items: flex-start;
             transition: all 0.3s ease;
             border: 1px solid transparent;
@@ -453,13 +596,13 @@
         .inside-item:hover {
             border-color: var(--accent-gold);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px var(--shadow);
+            box-shadow: 0 15px 40px var(--shadow);
         }
 
         .inside-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-cream);
+            width: 44px;
+            height: 44px;
+            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -467,15 +610,15 @@
         }
 
         .inside-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             stroke: var(--accent-gold);
         }
 
         .inside-item h3 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .inside-item p {
@@ -483,31 +626,250 @@
             font-size: 14px;
         }
 
+        /* Neuroscience Triggers Section */
+        .neuro-triggers {
+            padding: 100px 24px;
+            background: var(--bg-warm);
+        }
+
+        .neuro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .neuro-card {
+            background: var(--white);
+            padding: 40px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .neuro-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .neuro-card p {
+            color: var(--text-brown);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .neuro-fact {
+            background: var(--bg-cream);
+            padding: 16px;
+            font-size: 13px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* Cortisol Chart */
+        .cortisol-chart {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cortisol-bar {
+            display: grid;
+            grid-template-columns: 100px 1fr 70px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cortisol-label {
+            font-size: 11px;
+            color: var(--text-brown);
+        }
+
+        .cortisol-visual {
+            height: 20px;
+            background: var(--bg-warm);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cortisol-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .cortisol-visual.high .cortisol-fill {
+            background: linear-gradient(90deg, var(--accent-gold), #c9a66b);
+        }
+
+        .cortisol-visual.normal .cortisol-fill {
+            background: linear-gradient(90deg, rgba(139,115,85,0.4), rgba(166,139,91,0.6));
+        }
+
+        .cortisol-status {
+            font-size: 11px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .cortisol-status.high {
+            color: var(--accent-gold);
+        }
+
+        .cortisol-status.normal {
+            color: var(--text-brown);
+        }
+
+        /* Before/After Section */
+        .before-after {
+            padding: 100px 24px;
+            background: var(--bg-warm);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            padding: 40px;
+            height: 100%;
+        }
+
+        .comparison-card.before {
+            border-top: 3px solid rgba(139, 115, 85, 0.3);
+        }
+
+        .comparison-card.after {
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-icon svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .comparison-header h3 {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            color: var(--text-brown);
+        }
+
+        .comparison-card.after .comparison-header h3 {
+            color: var(--accent-gold);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 10px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-brown);
+            border-bottom: 1px solid var(--bg-cream);
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        .comparison-card.after .comparison-list li::before {
+            content: '✓';
+        }
+
+        .comparison-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comparison-arrow svg {
+            width: 60px;
+        }
+
+        .comparison-arrow span {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .research-citation {
+            margin-top: 60px;
+            padding: 30px 40px;
+            background: var(--white);
+            border-left: 3px solid var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .citation-icon {
+            opacity: 0.6;
+        }
+
+        .research-citation p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .research-citation cite {
+            font-size: 12px;
+            color: var(--text-brown);
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
         /* Testimonials */
         .testimonials {
-            padding: 120px 24px;
-            background: var(--white);
+            padding: 100px 24px;
+            background: var(--bg-cream);
         }
 
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 24px;
             margin-top: 60px;
         }
 
         .testimonial {
-            padding: 40px;
-            background: var(--bg-cream);
+            padding: 35px;
+            background: var(--white);
             position: relative;
         }
 
         .testimonial::before {
             content: '"';
             font-family: 'Cormorant Garamond', serif;
-            font-size: 6rem;
+            font-size: 5rem;
             color: var(--accent-gold);
-            opacity: 0.3;
+            opacity: 0.2;
             position: absolute;
             top: 10px;
             left: 20px;
@@ -517,9 +879,10 @@
         .testimonial p {
             font-style: italic;
             color: var(--text-dark);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             position: relative;
             z-index: 1;
+            font-size: 15px;
         }
 
         .testimonial-author {
@@ -533,24 +896,24 @@
             font-weight: 500;
         }
 
-        /* Pricing Section */
+        /* Pricing */
         .pricing {
-            padding: 120px 24px;
-            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-warm) 100%);
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--bg-warm) 100%);
         }
 
         .pricing-card {
-            max-width: 600px;
+            max-width: 580px;
             margin: 60px auto 0;
             background: var(--white);
-            padding: 60px;
+            padding: 50px;
             text-align: center;
             border: 1px solid var(--accent-gold);
             position: relative;
         }
 
         .pricing-card::before {
-            content: 'ПОЛНЫЙ ДОСТУП';
+            content: '4 НЕДЕЛИ ТРАНСФОРМАЦИИ';
             position: absolute;
             top: -12px;
             left: 50%;
@@ -563,22 +926,21 @@
         }
 
         .pricing-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--text-dark);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .pricing-subtitle {
             color: var(--text-brown);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            font-size: 15px;
         }
 
-        .pricing-price {
-            margin-bottom: 40px;
-        }
+        .pricing-price { margin-bottom: 35px; }
 
         .price-old {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--text-brown);
             text-decoration: line-through;
             opacity: 0.5;
@@ -586,47 +948,43 @@
 
         .price-new {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 500;
             color: var(--text-dark);
         }
 
-        .price-new span {
-            font-size: 1.5rem;
-        }
+        .price-new span { font-size: 1.3rem; }
 
         .pricing-features {
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .pricing-feature {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 16px 0;
+            gap: 14px;
+            padding: 14px 0;
             border-bottom: 1px solid var(--bg-warm);
         }
 
-        .pricing-feature:last-child {
-            border-bottom: none;
-        }
+        .pricing-feature:last-child { border-bottom: none; }
 
         .pricing-feature svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: var(--accent-gold);
             flex-shrink: 0;
         }
 
         .pricing-feature span {
             color: var(--text-dark);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .pricing-button {
             width: 100%;
-            padding: 20px 40px;
+            padding: 18px 40px;
             background: var(--text-dark);
             color: var(--white);
             border: none;
@@ -640,19 +998,11 @@
             display: block;
         }
 
-        .pricing-button:hover {
-            background: var(--accent-gold);
-        }
+        .pricing-button:hover { background: var(--accent-gold); }
 
-        .pricing-guarantee {
-            margin-top: 24px;
-            font-size: 13px;
-            color: var(--text-brown);
-        }
-
-        /* FAQ Section */
+        /* FAQ Section - Expanded */
         .faq {
-            padding: 120px 24px;
+            padding: 100px 24px;
             background: var(--white);
         }
 
@@ -661,20 +1011,36 @@
             margin: 60px auto 0;
         }
 
-        .faq-item {
+        .faq-category {
+            margin-bottom: 40px;
+        }
+
+        .faq-category-title {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             border-bottom: 1px solid var(--bg-warm);
-            padding: 32px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--bg-cream);
+            padding: 24px 0;
         }
 
         .faq-question {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: var(--text-dark);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: color 0.3s ease;
         }
+
+        .faq-question:hover { color: var(--accent-gold); }
 
         .faq-question::after {
             content: '+';
@@ -683,43 +1049,41 @@
             transition: transform 0.3s ease;
         }
 
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s ease;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
+        .faq-item.active .faq-answer { max-height: 500px; }
 
         .faq-answer p {
-            padding-top: 20px;
+            padding-top: 16px;
             color: var(--text-brown);
             font-size: 15px;
+            line-height: 1.7;
         }
 
         /* Final CTA */
         .final-cta {
-            padding: 120px 24px;
+            padding: 100px 24px;
             background: var(--text-dark);
             text-align: center;
         }
 
         .final-cta h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 4vw, 3rem);
             color: var(--bg-cream);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .final-cta p {
             color: rgba(245, 240, 232, 0.7);
             max-width: 500px;
-            margin: 0 auto 40px;
+            margin: 0 auto 35px;
+            font-size: 15px;
         }
 
         .final-cta .cta-button {
@@ -745,46 +1109,42 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.25rem;
             color: var(--bg-cream);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         footer p {
-            font-size: 13px;
+            font-size: 12px;
             color: rgba(245, 240, 232, 0.5);
         }
 
+        footer p + p { margin-top: 8px; }
+
         /* Responsive */
         @media (max-width: 900px) {
-            .stats {
-                grid-template-columns: 1fr;
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .science-grid { grid-template-columns: 1fr; }
+            .protocol-steps { grid-template-columns: 1fr; }
+            .inside-grid { grid-template-columns: 1fr; }
+            .neuro-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .brain-change { grid-template-columns: 100px 1fr 60px; gap: 12px; }
+            .comparison-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px;
             }
-
-            .science-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
+            .comparison-arrow {
+                flex-direction: row;
+                justify-content: center;
             }
-
-            .protocol-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .inside-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            .comparison-arrow svg {
+                transform: rotate(90deg);
             }
         }
 
         @media (max-width: 600px) {
-            .pricing-card {
-                padding: 40px 24px;
-            }
-
-            .hero {
-                padding: 40px 20px;
-            }
+            .stats { grid-template-columns: 1fr; }
+            .pricing-card { padding: 35px 24px; }
+            .breathing-square { width: 220px; height: 220px; }
         }
     </style>
 </head>
@@ -798,8 +1158,8 @@
             <span>остановки ума</span>
         </h1>
         <p class="hero-subtitle">
-            16 минут в день, которые перестраивают мозг. Научно обоснованная система 
-            для тех, кто устал от бесконечного внутреннего диалога.
+            16 минут в день, которые физически перестраивают мозг. 
+            Научно обоснованная система для тех, кто устал от бесконечного внутреннего диалога.
         </p>
         <a href="#pricing" class="cta-button">
             Получить доступ
@@ -816,12 +1176,87 @@
             <div class="stat-label">времени мы «не здесь»</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">8</div>
-            <div class="stat-label">недель до изменений на МРТ</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">недели до изменений</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">16</div>
-            <div class="stat-label">минут ежедневной практики</div>
+            <div class="stat-label">минут практики в день</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">20%</div>
+            <div class="stat-label">энергии мозга на DMN</div>
+        </div>
+    </section>
+
+    <!-- Triggers Section - стиль как у dobrozdravin -->
+    <section class="triggers">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Разоблачение мифов</div>
+                <h2 class="section-title">Почему одни люди живут с ясной головой, а другие — в тумане?</h2>
+            </div>
+            <div class="trigger-list">
+                <div class="trigger-item">
+                    <div class="trigger-false">
+                        <div class="trigger-icon false">✗</div>
+                        <div class="trigger-text">
+                            <strong>Ясная голова — не результат силы воли.</strong> Можно быть дисциплинированным и всё равно тонуть в мыслях. Потому что сила воли — истощаемый ресурс. К вечеру её нет.
+                        </div>
+                    </div>
+                    <div class="trigger-truth">
+                        Те, кто живёт с ясной головой, не «заставляют» себя не думать. У них просто по-другому настроен мозг.
+                    </div>
+                </div>
+
+                <div class="trigger-item">
+                    <div class="trigger-false">
+                        <div class="trigger-icon false">✗</div>
+                        <div class="trigger-text">
+                            <strong>Ясная голова — не результат отсутствия проблем.</strong> У спокойных людей не меньше дел и стресса. Часто — больше. Но они иначе обрабатывают информацию.
+                        </div>
+                    </div>
+                    <div class="trigger-truth">
+                        Разница не в том, сколько у тебя проблем. А в том, как твой мозг с ними работает — генерирует бесконечный цикл тревоги или решает по одной.
+                    </div>
+                </div>
+
+                <div class="trigger-item">
+                    <div class="trigger-false">
+                        <div class="trigger-icon false">✗</div>
+                        <div class="trigger-text">
+                            <strong>Ясная голова — не результат характера.</strong> «Я просто такой человек» — это не про характер. Это про нейронные связи, которые формировались годами.
+                        </div>
+                    </div>
+                    <div class="trigger-truth">
+                        Хорошая новость: нейропластичность работает в любом возрасте. Те связи, которые сделали тебя тревожным, можно перестроить.
+                    </div>
+                </div>
+
+                <div class="trigger-item">
+                    <div class="trigger-false">
+                        <div class="trigger-icon false">✗</div>
+                        <div class="trigger-text">
+                            <strong>Ясная голова — не результат медитации на YouTube.</strong> 95% людей бросают приложения для медитации в первую неделю. Потому что там нет системы.
+                        </div>
+                    </div>
+                    <div class="trigger-truth">
+                        Медитация без понимания механики — как спортзал без программы тренировок. Можно ходить годами и не видеть результата.
+                    </div>
+                </div>
+
+                <div class="trigger-item">
+                    <div class="trigger-false">
+                        <div class="trigger-icon true">✓</div>
+                        <div class="trigger-text">
+                            <strong>Ясная голова — результат правильной тренировки мозга.</strong> Исследования Гарварда показали: 4 недели целенаправленной практики меняют структуру мозга. Это видно на МРТ.
+                        </div>
+                    </div>
+                    <div class="trigger-truth">
+                        Миндалина (центр страха) уменьшается. Префронтальная кора (центр решений) уплотняется. Это не метафора — это анатомия.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -834,91 +1269,234 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <h3>Бесконечные диалоги</h3>
-                    <p>Ведёшь разговоры с людьми, которых рядом нет. Прокручиваешь прошлое. Репетируешь будущее. Мозг не даёт передышки.</p>
+                    <h3>Внутренний диалог 24/7</h3>
+                    <p>Ведёшь разговоры с людьми, которых рядом нет. Репетируешь будущее. Прокручиваешь прошлое. Мозг генерирует 6000+ мыслей в день — и 95% из них повторяются.</p>
                 </div>
                 <div class="problem-card">
                     <h3>Фоновая тревога</h3>
-                    <p>Вроде всё хорошо, но что-то не так. Тревожишься о том, что ещё не случилось. Тело напряжено без причины.</p>
+                    <p>Вроде всё хорошо, но что-то не так. Тревожишься о том, что ещё не случилось. Тело напряжено без видимой причины. Кортизол хронически повышен.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>Туман в голове</h3>
-                    <p>Трудно сосредоточиться. Читаешь страницу — и не помнишь, о чём. Начинаешь дело — и уже думаешь о другом.</p>
+                    <h3>Невозможность сфокусироваться</h3>
+                    <p>Читаешь страницу — и не помнишь, о чём. Начинаешь задачу — и через минуту думаешь о другом. Внимание постоянно утекает.</p>
                 </div>
                 <div class="problem-card">
                     <h3>Усталость без причины</h3>
-                    <p>Просыпаешься уставшим. Энергии нет, хотя ничего особенного не делал. Мозг потребляет ресурсы впустую.</p>
+                    <p>Просыпаешься разбитым. Энергии нет, хотя ничего особенного не делал. DMN потребляет 20% энергии мозга — даже когда ты «отдыхаешь».</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Science Section -->
+    <!-- Science Section with Infographic -->
     <section class="science">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Нейробиология</div>
                 <h2 class="section-title">Почему мозг не выключается</h2>
             </div>
-            <div class="science-content">
+            <div class="science-grid">
                 <div class="science-text">
                     <h3>Default Mode Network</h3>
                     <p>
-                        Гарвардское исследование (Killingsworth & Gilbert, 2010) показало: 46.9% времени 
-                        бодрствования мы проводим «не здесь» — в мыслях о прошлом или будущем.
+                        В 2001 году нейробиолог Marcus Raichle сделал открытие: определённые области мозга 
+                        становятся <em>более</em> активными, когда человек ничего не делает. Эта сеть получила 
+                        название Default Mode Network — сеть пассивного режима.
                     </p>
                     <p>
-                        Виновник — Default Mode Network, сеть нейронов, которая активируется, 
-                        когда вы ничем не заняты. Она генерирует мысли без остановки. 
-                        И чем она активнее — тем выше уровень тревоги и неудовлетворённости.
-                    </p>
-                    <p>
-                        Но есть и хорошая новость: исследования показывают, что регулярная практика 
-                        снижает активность DMN и буквально перестраивает структуру мозга.
+                        DMN активируется при самореферентном мышлении: когда мы думаем о себе, вспоминаем 
+                        прошлое, планируем будущее. Проблема: эта сеть потребляет до 20% энергии мозга на 
+                        бесконечный внутренний монолог.
                     </p>
                     <div class="science-quote">
-                        «Блуждающий ум — несчастливый ум»
-                        <br><small>— Killingsworth & Gilbert, Science</small>
+                        «Человеческий ум — это блуждающий ум, а блуждающий ум — это несчастный ум»
+                        <cite>— Killingsworth & Gilbert, Science, 2010</cite>
+                    </div>
+                    <p>
+                        Гарвардское исследование (2250 человек, 83 страны) показало: присутствие в моменте 
+                        влияет на ощущение счастья в 2.3 раза сильнее, чем то, чем человек занят.
+                    </p>
+                </div>
+                <div class="infographic">
+                    <div class="infographic-title">Изменения мозга за 4 недели практики</div>
+                    
+                    <!-- Brain SVG Visualization -->
+                    <div class="brain-visual">
+                        <svg viewBox="0 0 300 220" class="brain-svg">
+                            <!-- Brain outline -->
+                            <path class="brain-outline" d="M150 20 C80 20 30 70 30 120 C30 170 70 200 110 200 L190 200 C230 200 270 170 270 120 C270 70 220 20 150 20" fill="none" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                            
+                            <!-- Brain folds -->
+                            <path d="M60 80 Q90 60 120 80" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            <path d="M80 110 Q110 90 140 110" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            <path d="M180 80 Q210 60 240 80" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            <path d="M160 110 Q190 90 220 110" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            <path d="M100 140 Q130 120 160 140" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            <path d="M140 140 Q170 120 200 140" fill="none" stroke="rgba(166,139,91,0.2)" stroke-width="1"/>
+                            
+                            <!-- Prefrontal Cortex - highlighted -->
+                            <ellipse cx="150" cy="55" rx="45" ry="25" fill="rgba(166,139,91,0.15)" stroke="rgba(166,139,91,0.6)" stroke-width="1.5" class="brain-region prefrontal"/>
+                            <text x="150" y="52" text-anchor="middle" fill="#A68B5B" font-size="8" font-weight="500">ПРЕФРОНТАЛЬНАЯ</text>
+                            <text x="150" y="62" text-anchor="middle" fill="#A68B5B" font-size="8" font-weight="500">КОРА</text>
+                            
+                            <!-- Hippocampus -->
+                            <ellipse cx="110" cy="130" rx="25" ry="15" fill="rgba(166,139,91,0.15)" stroke="rgba(166,139,91,0.6)" stroke-width="1.5" class="brain-region hippocampus"/>
+                            <text x="110" y="133" text-anchor="middle" fill="#A68B5B" font-size="7">ГИППОКАМП</text>
+                            
+                            <!-- Amygdala -->
+                            <ellipse cx="190" cy="130" rx="25" ry="15" fill="rgba(139,115,85,0.25)" stroke="rgba(166,139,91,0.6)" stroke-width="1.5" class="brain-region amygdala"/>
+                            <text x="190" y="133" text-anchor="middle" fill="#A68B5B" font-size="7">МИНДАЛИНА</text>
+                            
+                            <!-- Annotations -->
+                            <line x1="150" y1="80" x2="150" y2="95" stroke="rgba(166,139,91,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+                            <text x="150" y="105" text-anchor="middle" fill="rgba(245,240,232,0.6)" font-size="6">↑ ПЛОТНОСТЬ</text>
+                            
+                            <line x1="110" y1="145" x2="110" y2="160" stroke="rgba(166,139,91,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+                            <text x="110" y="172" text-anchor="middle" fill="rgba(245,240,232,0.6)" font-size="6">↑ ОБЪЁМ</text>
+                            
+                            <line x1="190" y1="145" x2="190" y2="160" stroke="rgba(166,139,91,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+                            <text x="190" y="172" text-anchor="middle" fill="rgba(245,240,232,0.6)" font-size="6">↓ РАЗМЕР</text>
+                        </svg>
+                    </div>
+
+                    <div class="brain-changes">
+                        <div class="brain-change">
+                            <div class="brain-area">Гиппокамп</div>
+                            <div class="brain-bar">
+                                <div class="brain-bar-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="brain-result">↑ память</div>
+                        </div>
+                        <div class="brain-change">
+                            <div class="brain-area">Префронтальная кора</div>
+                            <div class="brain-bar">
+                                <div class="brain-bar-fill" style="width: 78%;"></div>
+                            </div>
+                            <div class="brain-result">↑ контроль</div>
+                        </div>
+                        <div class="brain-change">
+                            <div class="brain-area">Миндалина</div>
+                            <div class="brain-bar">
+                                <div class="brain-bar-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="brain-result">↓ тревога</div>
+                        </div>
+                        <div class="brain-change">
+                            <div class="brain-area">Активность DMN</div>
+                            <div class="brain-bar">
+                                <div class="brain-bar-fill" style="width: 55%;"></div>
+                            </div>
+                            <div class="brain-result">↓ шум</div>
+                        </div>
+                    </div>
+                    <div class="research-table">
+                        <div class="research-row">
+                            <div class="research-source">Hölzel et al., 2011</div>
+                            <div class="research-finding">Harvard/MGH: Увеличение серого вещества после 8 недель</div>
+                        </div>
+                        <div class="research-row">
+                            <div class="research-source">Brewer et al., 2011</div>
+                            <div class="research-finding">Yale: Снижение активности DMN у практикующих</div>
+                        </div>
+                        <div class="research-row">
+                            <div class="research-source">Ma et al., 2017</div>
+                            <div class="research-finding">Значимое снижение кортизола в слюне</div>
+                        </div>
                     </div>
                 </div>
-                <div class="science-visual">
-                    <div class="brain-stats">
-                        <div class="brain-stat">
-                            <div class="brain-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Hölzel et al., 2011</h4>
-                                <p>8 недель практики — увеличение плотности серого вещества в гиппокампе</p>
-                            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Visual Section -->
+    <section class="before-after">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Трансформация</div>
+                <h2 class="section-title">До и после 4 недель</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card before">
+                    <div class="comparison-header">
+                        <div class="comparison-icon">
+                            <svg viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="28" fill="none" stroke="rgba(139,115,85,0.3)" stroke-width="1"/>
+                                <!-- Chaotic lines representing scattered thoughts -->
+                                <path d="M15 20 Q25 35 20 45" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <path d="M25 15 Q35 25 30 40" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <path d="M35 18 Q45 30 40 42" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <path d="M20 25 Q40 20 45 35" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <path d="M15 35 Q30 45 45 30" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <path d="M18 40 Q35 50 42 38" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                                <!-- Noise dots -->
+                                <circle cx="20" cy="22" r="2" fill="rgba(139,115,85,0.3)"/>
+                                <circle cx="35" cy="25" r="2" fill="rgba(139,115,85,0.3)"/>
+                                <circle cx="25" cy="38" r="2" fill="rgba(139,115,85,0.3)"/>
+                                <circle cx="40" cy="35" r="2" fill="rgba(139,115,85,0.3)"/>
+                                <circle cx="30" cy="30" r="2" fill="rgba(139,115,85,0.3)"/>
+                            </svg>
                         </div>
-                        <div class="brain-stat">
-                            <div class="brain-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 6v6l4 2"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Brewer et al., 2011</h4>
-                                <p>Снижение активности DMN у практикующих — меньше блуждания ума</p>
-                            </div>
-                        </div>
-                        <div class="brain-stat">
-                            <div class="brain-stat-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Ma et al., 2017</h4>
-                                <p>Значимое снижение кортизола после 8 недель ежедневной практики</p>
-                            </div>
-                        </div>
+                        <h3>ДО</h3>
                     </div>
+                    <ul class="comparison-list">
+                        <li>6000+ мыслей в день без контроля</li>
+                        <li>Фоновая тревога 24/7</li>
+                        <li>DMN активна постоянно</li>
+                        <li>Высокий кортизол</li>
+                        <li>Увеличенная миндалина</li>
+                        <li>Усталость без причины</li>
+                        <li>Невозможность сфокусироваться</li>
+                    </ul>
                 </div>
+                
+                <div class="comparison-arrow">
+                    <svg viewBox="0 0 60 30">
+                        <path d="M5 15 L45 15" stroke="var(--accent-gold)" stroke-width="2" fill="none"/>
+                        <path d="M40 8 L50 15 L40 22" stroke="var(--accent-gold)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>4 недели</span>
+                </div>
+                
+                <div class="comparison-card after">
+                    <div class="comparison-header">
+                        <div class="comparison-icon">
+                            <svg viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="28" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"/>
+                                <!-- Organized concentric circles -->
+                                <circle cx="30" cy="30" r="20" fill="none" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                                <circle cx="30" cy="30" r="12" fill="none" stroke="rgba(166,139,91,0.4)" stroke-width="1"/>
+                                <circle cx="30" cy="30" r="5" fill="var(--accent-gold)" opacity="0.6"/>
+                                <!-- Subtle rays -->
+                                <line x1="30" y1="8" x2="30" y2="15" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                                <line x1="30" y1="45" x2="30" y2="52" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                                <line x1="8" y1="30" x2="15" y2="30" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                                <line x1="45" y1="30" x2="52" y2="30" stroke="rgba(166,139,91,0.3)" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <h3>ПОСЛЕ</h3>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Осознанный выбор, о чём думать</li>
+                        <li>Спокойствие как фон</li>
+                        <li>DMN под контролем</li>
+                        <li>Нормальный кортизол</li>
+                        <li>Уменьшенная миндалина</li>
+                        <li>Энергия и ясность</li>
+                        <li>Глубокий фокус по запросу</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Research Citation -->
+            <div class="research-citation">
+                <div class="citation-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--accent-gold)" stroke-width="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                    </svg>
+                </div>
+                <p>«МРТ-сканирование показывает, что после 8 недель практики "боевой центр" мозга — миндалина — уменьшается. По мере уменьшения миндалины префронтальная кора становится толще»</p>
+                <cite>— Scientific American, 2014</cite>
             </div>
         </div>
     </section>
@@ -935,43 +1513,76 @@
                     <div class="step-number">1</div>
                     <h3>Дыхание</h3>
                     <div class="step-time">4 минуты</div>
-                    <p>Техника Navy SEALs. Box Breathing 4-4-4-4. Активирует блуждающий нерв, снижает кортизол, переключает нервную систему.</p>
+                    <p>Техника Box Breathing (Navy SEALs). Активирует блуждающий нерв, снижает кортизол, переключает нервную систему из «бей-беги» в «отдых-восстановление».</p>
                 </div>
                 <div class="protocol-step">
                     <div class="step-number">2</div>
                     <h3>Фокус</h3>
                     <div class="step-time">5–15 минут</div>
-                    <p>Внимание на дыхании в ноздрях. Мысль увела — заметил — вернулся. Каждое возвращение укрепляет префронтальную кору.</p>
+                    <p>Внимание на дыхании в ноздрях. Мысль увела → заметил → вернулся. Каждое возвращение — тренировка префронтальной коры. 50 возвращений = 50 повторений.</p>
                 </div>
                 <div class="protocol-step">
                     <div class="step-number">3</div>
                     <h3>Интеграция</h3>
                     <div class="step-time">2 минуты</div>
-                    <p>Расширение внимания на всё тело. Сканирование сверху вниз. Намерение на день. Мост между практикой и жизнью.</p>
+                    <p>Расширение внимания на всё тело. Сканирование сверху вниз. Намерение на день. Мост между практикой и повседневной жизнью.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What's Inside Section -->
+    <!-- Breathing Infographic -->
+    <section class="breathing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Техника Navy SEALs</div>
+                <h2 class="section-title">Box Breathing</h2>
+            </div>
+            <div class="breathing-visual">
+                <div class="breathing-square">
+                    <div class="breathing-label top">
+                        <span class="breathing-time">4 сек</span>
+                        вдох
+                    </div>
+                    <div class="breathing-label right">
+                        <span class="breathing-time">4 сек</span>
+                        задержка
+                    </div>
+                    <div class="breathing-label bottom">
+                        <span class="breathing-time">4 сек</span>
+                        выдох
+                    </div>
+                    <div class="breathing-label left">
+                        <span class="breathing-time">4 сек</span>
+                        задержка
+                    </div>
+                    <div class="breathing-center">
+                        <span>×8</span>
+                        <small>циклов</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
     <section class="inside">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Что внутри</div>
-                <h2 class="section-title">28 дней, которые меняют всё</h2>
+                <h2 class="section-title">28 дней трансформации</h2>
             </div>
             <div class="inside-grid">
                 <div class="inside-item">
                     <div class="inside-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 18V5l12-2v13"/>
-                            <circle cx="6" cy="18" r="3"/>
-                            <circle cx="18" cy="16" r="3"/>
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                         </svg>
                     </div>
                     <div>
-                        <h3>7 аудио-практик</h3>
-                        <p>Голосовое сопровождение от 4 до 21 минуты. Не думаешь, что делать — просто слушаешь и следуешь.</p>
+                        <h3>7 видео-практик</h3>
+                        <p>Полное сопровождение от 4 до 21 минуты. Не думаешь, что делать — просто смотришь и следуешь.</p>
                     </div>
                 </div>
                 <div class="inside-item">
@@ -979,8 +1590,6 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14,2 14,8 20,8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
                     </div>
                     <div>
@@ -1012,20 +1621,20 @@
                         </svg>
                     </div>
                     <div>
-                        <h3>Чат участников</h3>
+                        <h3>Закрытый чат</h3>
                         <p>Комьюнити тех, кто идёт тем же путём. Поддержка, ответы на вопросы, общая энергия.</p>
                     </div>
                 </div>
                 <div class="inside-item">
                     <div class="inside-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polygon points="23 7 16 12 23 17 23 7"/>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10 8 16 12 10 16 10 8"/>
                         </svg>
                     </div>
                     <div>
-                        <h3>Живые эфиры</h3>
-                        <p>Еженедельные разборы, ответы на вопросы, совместные практики. Прямой контакт.</p>
+                        <h3>Регулярные эфиры и сопровождение</h3>
+                        <p>Разборы, ответы на вопросы, совместные практики. Прямой контакт с автором.</p>
                     </div>
                 </div>
                 <div class="inside-item">
@@ -1037,7 +1646,88 @@
                     </div>
                     <div>
                         <h3>Вечный доступ</h3>
-                        <p>Один раз — навсегда. Возвращайся к материалам, когда нужно. Без подписок и скрытых платежей.</p>
+                        <p>Один раз — навсегда. Возвращайся к материалам, когда нужно. Без подписок.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neuroscience Triggers -->
+    <section class="neuro-triggers">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Почему это работает</div>
+                <h2 class="section-title">Нейробиология изменений</h2>
+            </div>
+            <div class="neuro-grid">
+                <div class="neuro-card">
+                    <h3>Блуждающий нерв</h3>
+                    <p>
+                        Vagus — самый длинный черепной нерв, соединяющий мозг с сердцем, лёгкими и кишечником. 
+                        Это главный канал парасимпатической системы «отдых и восстановление».
+                    </p>
+                    <p>
+                        Дыхание — единственная автономная функция, которую можно контролировать сознательно. 
+                        Через него мы получаем прямой доступ к нервной системе.
+                    </p>
+                    <div class="neuro-fact">
+                        Медленный выдох активирует барорецепторы → стимуляция vagus → замедление пульса → сигнал мозгу «безопасно»
+                    </div>
+                </div>
+                <div class="neuro-card">
+                    <h3>Кортизол и хронический стресс</h3>
+                    <p>
+                        Кортизол полезен в острых ситуациях: мобилизует энергию, повышает концентрацию. 
+                        Проблема — когда он хронически повышен.
+                    </p>
+                    <!-- Cortisol Chart -->
+                    <div class="cortisol-chart">
+                        <div class="cortisol-bar">
+                            <div class="cortisol-label">До практики</div>
+                            <div class="cortisol-visual high">
+                                <div class="cortisol-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="cortisol-status high">Повышен</div>
+                        </div>
+                        <div class="cortisol-bar">
+                            <div class="cortisol-label">После 4 недель</div>
+                            <div class="cortisol-visual normal">
+                                <div class="cortisol-fill" style="width: 45%;"></div>
+                            </div>
+                            <div class="cortisol-status normal">Норма</div>
+                        </div>
+                    </div>
+                    <div class="neuro-fact">
+                        Исследование Ma et al.: 8 недель дыхательных практик → значимое снижение кортизола в слюне
+                    </div>
+                </div>
+                <div class="neuro-card">
+                    <h3>Нейропластичность</h3>
+                    <p>
+                        Мозг меняется в любом возрасте. Классический пример: у лондонских таксистов 
+                        увеличен гиппокамп (Maguire, 2000) — они годами запоминали карту города.
+                    </p>
+                    <p>
+                        Каждый раз, когда вы замечаете уход внимания и возвращаетесь — вы укрепляете 
+                        нейронные связи контроля. 50 возвращений = 50 «повторений в зале».
+                    </p>
+                    <div class="neuro-fact">
+                        Hölzel et al., 2011: 8 недель практики → увеличение плотности серого вещества в гиппокампе
+                    </div>
+                </div>
+                <div class="neuro-card">
+                    <h3>Миндалина уменьшается</h3>
+                    <p>
+                        Миндалевидное тело (amygdala) — центр страха и тревоги. Его гиперактивность 
+                        связана с тревожными расстройствами, ПТСР, хроническим стрессом.
+                    </p>
+                    <p>
+                        Роттердамское исследование (3742 человека): у практикующих медитацию 
+                        статистически значимо меньший объём правой миндалины.
+                    </p>
+                    <div class="neuro-fact">
+                        Scientific American: «По мере уменьшения миндалины префронтальная кора становится толще»
                     </div>
                 </div>
             </div>
@@ -1053,21 +1743,21 @@
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    <p>Первую неделю думал, что ничего не происходит. На второй заметил, что засыпаю за 10 минут вместо часа. Сейчас не представляю утро без практики.</p>
+                    <p>Первую неделю думал, что ничего не происходит. На второй заметил, что засыпаю за 10 минут вместо часа. На третьей — что перестал прокручивать рабочие разговоры вечером.</p>
                     <div class="testimonial-author">
                         <strong>Алексей</strong>
                         Предприниматель, 34 года
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p>Пробовала приложения для медитации — бросала через неделю. Здесь всё по-другому: понимаешь, что делаешь и зачем. И аудио-практики — это кайф.</p>
+                    <p>Пробовала приложения для медитации — бросала через неделю. Здесь всё по-другому: понимаешь механику. Знаешь, что делаешь и зачем. И видео-практики — это спасение.</p>
                     <div class="testimonial-author">
                         <strong>Мария</strong>
                         Маркетолог, 28 лет
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p>Тревога была фоном всей жизни. Думал, это нормально. После 4 недель понял, что можно жить иначе. Голова впервые за годы тихая.</p>
+                    <p>Тревога была фоном всей жизни. Думал, это нормально — так все живут. После 4 недель понял, что можно иначе. Голова впервые за годы бывает тихой.</p>
                     <div class="testimonial-author">
                         <strong>Дмитрий</strong>
                         Разработчик, 31 год
@@ -1096,7 +1786,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                        <span>7 аудио-практик с голосовым сопровождением</span>
+                        <span>7 видео-практик с полным сопровождением</span>
                     </div>
                     <div class="pricing-feature">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1120,7 +1810,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                        <span>Еженедельные живые эфиры</span>
+                        <span>Регулярные эфиры и сопровождение</span>
                     </div>
                     <div class="pricing-feature">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1130,49 +1820,126 @@
                     </div>
                 </div>
                 <a href="https://t.me/your_bot" class="pricing-button">Получить доступ</a>
-                <p class="pricing-guarantee">7 дней — гарантия возврата. Не подошло — верну деньги без вопросов.</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Expanded -->
     <section class="faq">
         <div class="container">
             <div class="section-header">
-                <div class="section-label">Вопросы</div>
-                <h2 class="section-title">Частые вопросы</h2>
+                <div class="section-label">Вопросы и ответы</div>
+                <h2 class="section-title">Всё, что нужно знать</h2>
             </div>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">У меня нет времени на медитацию</div>
-                    <div class="faq-answer">
-                        <p>Начинаем с 11 минут в день. Это меньше, чем вы тратите на скроллинг ленты. А эффект от этих минут — на весь день. Большинство участников находят время утром, до того как начнётся суета.</p>
+                
+                <div class="faq-category">
+                    <div class="faq-category-title">О практике</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">У меня нет времени — я очень занят</div>
+                        <div class="faq-answer">
+                            <p>Протокол занимает 16 минут в день. Это меньше, чем вы тратите на скроллинг ленты или просмотр одного ролика на YouTube. Большинство участников практикуют утром, до того как начнётся суета — и отмечают, что эти 16 минут экономят часы за счёт повышенной концентрации и отсутствия «мыслительной жвачки».</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Я пробовал медитировать — у меня не получается, мысли постоянно уходят</div>
+                        <div class="faq-answer">
+                            <p>Это и есть практика. Мысли уходят у всех — даже у монахов с 30-летним опытом. Разница в том, что вы это замечаете и возвращаетесь. Каждое возвращение — это «повторение» для префронтальной коры. 50 раз отвлеклись и вернулись = 50 повторений. Именно так тренируется внимание. В протоколе подробно объясняется эта механика.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Что если я пропущу день?</div>
+                        <div class="faq-answer">
+                            <p>Один пропущенный день — не катастрофа. Просто продолжайте на следующий. Главное — не превращать пропуск в повод бросить совсем. Исследования показывают: регулярность важнее идеальности. 5-6 дней в неделю на протяжении месяца дадут результат. Перфекционизм — враг прогресса.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Когда лучше практиковать — утром или вечером?</div>
+                        <div class="faq-answer">
+                            <p>Утро предпочтительнее по двум причинам: 1) Сила воли максимальна — меньше шансов пропустить; 2) Эффект ясности распространяется на весь день. Но если утром категорически не получается — практикуйте вечером. Регулярная вечерняя практика лучше, чем нерегулярная утренняя.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Я пробовал медитировать — не работает</div>
-                    <div class="faq-answer">
-                        <p>95% людей бросают медитацию, потому что не понимают механику. Они думают, что «не получается», когда мысли уводят. Но это и есть практика — замечать и возвращаться. В протоколе объясняю, как это работает на уровне нейробиологии.</p>
+
+                <div class="faq-category">
+                    <div class="faq-category-title">О результатах</div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Когда я почувствую результат?</div>
+                        <div class="faq-answer">
+                            <p>Эффект от дыхательной техники — сразу, после первой практики (снижение пульса, ощущение спокойствия). Устойчивые изменения в повседневной жизни (лучший сон, меньше тревоги, больше фокуса) — через 2-3 недели регулярной практики. Структурные изменения мозга, видимые на МРТ — через 4-8 недель.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Это эффект плацебо?</div>
+                        <div class="faq-answer">
+                            <p>Исследования используют контрольные группы и измеряют объективные показатели: МРТ-снимки мозга, уровень кортизола в слюне, вариабельность сердечного ритма. Это не зависит от убеждений испытуемых. Изменения в структуре мозга — не плацебо, их видно на сканах. Но даже если бы это был плацебо — если практика снижает вашу тревогу и улучшает сон, какая разница?</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Результаты сохранятся после окончания программы?</div>
+                        <div class="faq-answer">
+                            <p>За 4 недели формируется привычка и новые нейронные связи. Большинство участников продолжают практиковать самостоятельно, потому что чувствуют разницу. Если вы перестанете совсем — эффект будет постепенно угасать (как с физическими тренировками). Но даже 5 минут в день поддерживают результат.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Чем это отличается от приложений?</div>
-                    <div class="faq-answer">
-                        <p>Приложения дают технику без понимания. Здесь — система: научная база, прогрессия, поддержка комьюнити, живые эфиры. И главное — вы понимаете, почему это работает, а не просто следуете инструкциям.</p>
+
+                <div class="faq-category">
+                    <div class="faq-category-title">Сравнение с альтернативами</div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Чем это отличается от бесплатных приложений для медитации?</div>
+                        <div class="faq-answer">
+                            <p>95% пользователей бросают приложения в первую неделю. Причина: там дают технику без понимания механики, без системы, без поддержки. Здесь: научная база (понимаете, что происходит в мозге), чёткая прогрессия (каждая неделя — новый уровень), комьюнити и эфиры (не одиноки в процессе), видео-сопровождение (не думаете, что делать).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Почему не пойти к психотерапевту?</div>
+                        <div class="faq-answer">
+                            <p>Это не замена терапии — это дополнение. Терапия работает с содержанием мыслей (что вы думаете и почему). Протокол работает с самим механизмом мышления (как выключить поток). Многие психотерапевты рекомендуют практики осознанности как часть лечения. Если у вас клиническая депрессия или тревожное расстройство — обратитесь к специалисту.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Я могу найти всё это бесплатно в интернете</div>
+                        <div class="faq-answer">
+                            <p>Можете. Информация о дыхании и медитации доступна везде. Вопрос — сколько времени уйдёт, чтобы собрать работающую систему? Отсеять мифы от науки? Выстроить правильную прогрессию? Большинство людей годами «собираются начать» или бросают после пары попыток. Здесь — готовая система, которая экономит месяцы проб и ошибок.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Когда будет результат?</div>
-                    <div class="faq-answer">
-                        <p>Эффект от дыхательной техники — сразу, после первой практики. Устойчивые изменения — через 2-4 недели регулярной практики. Структурные изменения мозга (видимые на МРТ) — через 8 недель.</p>
+
+                <div class="faq-category">
+                    <div class="faq-category-title">Технические вопросы</div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Как устроен доступ?</div>
+                        <div class="faq-answer">
+                            <p>После оплаты вы получаете доступ в закрытый Telegram-канал с программой. Там: видео-практики, PDF-материалы, ежедневный контент на 4 недели. Отдельно — чат участников для вопросов и поддержки. Доступ бессрочный — материалы остаются с вами навсегда.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Нужно ли специальное оборудование?</div>
+                        <div class="faq-answer">
+                            <p>Нет. Только место, где вы можете спокойно сидеть 16 минут. Подойдёт стул, кресло, подушка на полу — что угодно. Можно практиковать даже в машине (припаркованной) или в офисе с закрытой дверью. Никакие коврики, свечи или музыка не нужны.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Есть ли противопоказания?</div>
+                        <div class="faq-answer">
+                            <p>Если у вас эпилепсия, серьёзные сердечно-сосудистые заболевания, недавние операции на грудной клетке или беременность — проконсультируйтесь с врачом перед началом дыхательных практик. При психотических расстройствах или остром психозе — практики осознанности не рекомендуются без наблюдения специалиста.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">А если пропущу день?</div>
-                    <div class="faq-answer">
-                        <p>Один пропущенный день — не провал. Просто продолжаете на следующий. Протокол построен так, чтобы вы могли вернуться в любой момент. Главное — не бросать совсем.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1180,7 +1947,7 @@
     <!-- Final CTA -->
     <section class="final-cta">
         <h2>Тишина внутри — это навык</h2>
-        <p>И этому можно научиться. 16 минут в день. 28 дней. Другой мозг.</p>
+        <p>И этому можно научиться. 16 минут в день. 28 дней. Физически другой мозг. Это не метафора — это нейробиология.</p>
         <a href="#pricing" class="cta-button">
             Начать сейчас
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1193,9 +1960,7 @@
     <footer>
         <div class="footer-brand">Архитектура сознания</div>
         <p>© 2025. Все права защищены.</p>
-        <p style="margin-top: 16px; font-size: 12px; color: rgba(245, 240, 232, 0.4);">
-            ИП Ростовцева Дарья Валерьевна · ИНН: 241103415641
-        </p>
+        <p>ИП Ростовцева Дарья Валерьевна · ИНН: 241103415641</p>
     </footer>
 
     <script>
@@ -1204,37 +1969,21 @@
             question.addEventListener('click', () => {
                 const item = question.parentElement;
                 const isActive = item.classList.contains('active');
-                
-                // Close all
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                
-                // Open clicked if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+                if (!isActive) item.classList.add('active');
             });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Animate on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1242,9 +1991,9 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.problem-card, .protocol-step, .inside-item, .testimonial, .brain-stat').forEach(el => {
+        document.querySelectorAll('.problem-card, .protocol-step, .inside-item, .testimonial, .neuro-card, .trigger-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
