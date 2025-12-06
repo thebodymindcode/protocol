@@ -1325,6 +1325,223 @@
             text-align: center;
         }
 
+        /* Manifestation Section Styles */
+        .manifestation-section {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, #1a1408 0%, var(--text-dark) 50%, #1a1408 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifestation-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(166,139,91,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .manifestation-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .manifestation-section .section-label {
+            color: var(--accent-gold);
+        }
+
+        .manifestation-section .section-title {
+            color: var(--bg-cream);
+        }
+
+        .manifestation-section .section-subtitle {
+            color: rgba(245, 240, 232, 0.6);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .manifestation-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
+        }
+
+        .mind-state {
+            background: rgba(245, 240, 232, 0.03);
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            padding: 40px;
+            text-align: center;
+            width: 280px;
+            position: relative;
+        }
+
+        .mind-state.calm {
+            border-color: rgba(166, 139, 91, 0.4);
+            background: rgba(166, 139, 91, 0.05);
+        }
+
+        .mind-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+        }
+
+        .mind-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mind-state h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--bg-cream);
+            margin-bottom: 12px;
+        }
+
+        .mind-desc {
+            font-size: 13px;
+            color: rgba(245, 240, 232, 0.5);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .mind-result {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mind-result.negative {
+            background: rgba(180, 100, 100, 0.1);
+            color: rgba(200, 150, 150, 0.8);
+        }
+
+        .mind-result.positive {
+            background: rgba(166, 139, 91, 0.15);
+            color: var(--accent-gold);
+        }
+
+        .result-icon {
+            font-size: 16px;
+        }
+
+        .manifestation-arrow {
+            color: var(--accent-gold);
+        }
+
+        .manifestation-explanation {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .explanation-block {
+            background: rgba(245, 240, 232, 0.02);
+            border: 1px solid rgba(139, 115, 85, 0.15);
+            padding: 30px;
+        }
+
+        .explanation-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .explanation-block h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--bg-cream);
+            margin-bottom: 12px;
+        }
+
+        .explanation-block p {
+            font-size: 14px;
+            color: rgba(245, 240, 232, 0.6);
+            line-height: 1.7;
+        }
+
+        .manifestation-quote {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(166, 139, 91, 0.05);
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .manifestation-quote blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--bg-cream);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .manifestation-quote cite {
+            font-size: 14px;
+            color: var(--accent-gold);
+        }
+
+        .manifestation-formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .formula-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(245, 240, 232, 0.03);
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            padding: 15px 25px;
+        }
+
+        .formula-step.highlight {
+            background: rgba(166, 139, 91, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .formula-num {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .formula-step span:not(.formula-num) {
+            color: var(--bg-cream);
+            font-size: 14px;
+        }
+
+        .formula-connector {
+            color: var(--accent-gold);
+            font-size: 20px;
+        }
+
         .footer-brand {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.25rem;
@@ -1366,6 +1583,21 @@
                 flex-direction: column;
             }
             .formula-arrow {
+                transform: rotate(90deg);
+            }
+            .manifestation-visual {
+                flex-direction: column;
+            }
+            .manifestation-arrow {
+                transform: rotate(90deg);
+            }
+            .manifestation-explanation {
+                grid-template-columns: 1fr;
+            }
+            .manifestation-formula {
+                flex-direction: column;
+            }
+            .formula-connector {
                 transform: rotate(90deg);
             }
         }
@@ -1854,6 +2086,135 @@
                         <h3>Вечный доступ</h3>
                         <p>Один раз — навсегда. Возвращайся к материалам, когда нужно. Без подписок.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calm Mind = Manifestation Section -->
+    <section class="manifestation-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Ключевой принцип</div>
+                <h2 class="section-title">Почему у тебя не получается</h2>
+                <p class="section-subtitle">Визуализации, аффирмации, цели — всё это работает. Но только при одном условии.</p>
+            </div>
+
+            <div class="manifestation-visual">
+                <!-- Noisy Mind -->
+                <div class="mind-state noisy">
+                    <div class="mind-icon">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(139,115,85,0.3)" stroke-width="1"/>
+                            <!-- Chaotic thoughts -->
+                            <path d="M25 35 Q35 25 50 30 Q65 35 70 25" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                            <path d="M20 50 Q30 60 45 50 Q60 40 80 55" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                            <path d="M30 70 Q50 60 55 75 Q60 80 75 70" stroke="rgba(139,115,85,0.4)" fill="none" stroke-width="1"/>
+                            <path d="M35 40 Q45 55 40 65" stroke="rgba(139,115,85,0.3)" fill="none" stroke-width="1"/>
+                            <path d="M60 30 Q70 45 65 60" stroke="rgba(139,115,85,0.3)" fill="none" stroke-width="1"/>
+                            <!-- Static noise dots -->
+                            <circle cx="30" cy="45" r="2" fill="rgba(139,115,85,0.3)"/>
+                            <circle cx="70" cy="40" r="2" fill="rgba(139,115,85,0.3)"/>
+                            <circle cx="45" cy="65" r="2" fill="rgba(139,115,85,0.3)"/>
+                            <circle cx="55" cy="35" r="2" fill="rgba(139,115,85,0.3)"/>
+                            <circle cx="65" cy="60" r="2" fill="rgba(139,115,85,0.3)"/>
+                        </svg>
+                    </div>
+                    <h3>Шумный ум</h3>
+                    <p class="mind-desc">Желание + тревога + сомнения + страхи + внутренний критик</p>
+                    <div class="mind-result negative">
+                        <span class="result-icon">✗</span>
+                        <span>Сигнал не проходит</span>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="manifestation-arrow">
+                    <svg viewBox="0 0 60 24" width="60" height="24">
+                        <path d="M0 12 L50 12 M40 4 L52 12 L40 20" stroke="var(--accent-gold)" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <!-- Calm Mind -->
+                <div class="mind-state calm">
+                    <div class="mind-icon">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"/>
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(166,139,91,0.4)" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="rgba(166,139,91,0.5)" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="5" fill="var(--accent-gold)" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <h3>Тихий ум</h3>
+                    <p class="mind-desc">Желание + тишина + ясность + пространство</p>
+                    <div class="mind-result positive">
+                        <span class="result-icon">✓</span>
+                        <span>Сигнал принят</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanation -->
+            <div class="manifestation-explanation">
+                <div class="explanation-block">
+                    <div class="explanation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h4>Вдохновение приходит в тишине</h4>
+                    <p>Лучшие идеи приходят в душе, на прогулке, перед сном — когда ум затихает. Это не случайность. Когда DMN успокаивается, открывается доступ к более глубоким слоям сознания. Там живут инсайты.</p>
+                </div>
+                <div class="explanation-block">
+                    <div class="explanation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h4>Почему аффирмации не работают</h4>
+                    <p>Ты говоришь «я успешен», а внутри 47 голосов кричат «да ладно». Шум глушит намерение. Это как пытаться услышать шёпот на рок-концерте. Сначала — тишина. Потом — намерение.</p>
+                </div>
+                <div class="explanation-block">
+                    <div class="explanation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5">
+                            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h4>Правильная последовательность</h4>
+                    <p>Не «хочу → делаю → получаю». А «тишина → ясность → точное действие → результат». Элита это знает. Поэтому они медитируют, а не просто «визуализируют».</p>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="manifestation-quote">
+                <blockquote>
+                    «Интуиция — это священный дар, а рациональный ум — верный слуга. Мы создали общество, которое чтит слугу и забыло о даре»
+                </blockquote>
+                <cite>— Альберт Эйнштейн</cite>
+            </div>
+
+            <!-- Formula -->
+            <div class="manifestation-formula">
+                <div class="formula-step">
+                    <div class="formula-num">1</div>
+                    <span>Останови шум</span>
+                </div>
+                <div class="formula-connector">→</div>
+                <div class="formula-step">
+                    <div class="formula-num">2</div>
+                    <span>Услышь себя</span>
+                </div>
+                <div class="formula-connector">→</div>
+                <div class="formula-step">
+                    <div class="formula-num">3</div>
+                    <span>Действуй точно</span>
+                </div>
+                <div class="formula-connector">→</div>
+                <div class="formula-step highlight">
+                    <div class="formula-num">4</div>
+                    <span>Получи результат</span>
                 </div>
             </div>
         </div>
