@@ -27,6 +27,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -35,6 +36,8 @@
             color: var(--text-dark);
             line-height: 1.7;
             overflow-x: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         h1, h2, h3, h4 {
@@ -73,6 +76,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
+            overflow: hidden;
         }
 
         /* Hero Section */
@@ -1253,7 +1257,7 @@
         .choice-btn-primary:hover{background:var(--accent-gold)}
         .choice-btn-outline{background:transparent;border:1.5px solid var(--accent-gold);color:var(--accent-gold)}
         .choice-btn-outline:hover{background:var(--accent-gold);color:var(--white)}
-        @media(max-width:900px){.choice-grid{grid-template-columns:1fr;max-width:420px}}
+        /* Choice grid responsive - handled in main 900px query */
 
         /* FAQ Section - Expanded */
         .faq {
@@ -1769,23 +1773,12 @@
             font-size: 16px;
         }
 
-        @media (max-width: 600px) {
-            .support-card {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-            }
-            .support-list {
-                align-items: center;
-            }
-            .support-item {
-                justify-content: center;
-            }
-        }
+        /* Support responsive - handled in main 600px query */
 
         /* Responsive */
         @media (max-width: 900px) {
             [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+            [style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .science-grid { grid-template-columns: 1fr; }
             .protocol-steps { grid-template-columns: 1fr; }
@@ -1836,12 +1829,14 @@
             .formula-connector {
                 transform: rotate(90deg);
             }
+            .choice-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
+            .sticky-mobile{display:block}
         }
 
         @media (max-width: 600px) {
-            .stats { grid-template-columns: 1fr; }
-            .pricing-card { padding: 35px 24px; }
-            .breathing-square { width: 220px; height: 220px; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .pricing-card { padding: 28px 18px; }
+            .breathing-square { width: 200px; height: 200px; }
             .ny-timeline {
                 flex-direction: column;
                 gap: 40px;
@@ -1850,6 +1845,116 @@
             .timeline-line {
                 display: none;
             }
+
+            /* GLOBAL MOBILE FIX */
+            *{max-width:100vw}
+            .container{padding:0 16px;overflow:hidden}
+            section{overflow-x:hidden}
+
+            /* Force all inline grids to collapse */
+            [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
+            [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
+            [style*="grid-template-columns:repeat(5"]{grid-template-columns:repeat(2,1fr)!important}
+            [style*="gap:36px"]{gap:16px!important}
+            [style*="gap:48px"]{gap:20px!important}
+            [style*="gap:64px"]{gap:24px!important}
+
+            /* Hero */
+            .hero{padding:80px 16px 60px;min-height:100svh}
+            .hero h1{font-size:2.4rem;margin-bottom:18px}
+            .hero-badge{font-size:9px;letter-spacing:2px;margin-bottom:24px}
+            .hero-subtitle{font-size:.95rem;margin-bottom:32px;max-width:100%}
+            .cta-button{padding:16px 28px;font-size:12px;letter-spacing:.5px;width:100%;justify-content:center}
+
+            /* Stats */
+            .stats{grid-template-columns:1fr 1fr}
+            .stat-item{padding:28px 12px}
+            .stat-number{font-size:2rem}
+            .stat-label{font-size:10px}
+
+            /* Trust bar */
+            [style*="gap:36px"][style*="flex-wrap"]{gap:12px!important;flex-direction:column!important}
+
+            /* Sections */
+            .section-header{margin-bottom:32px}
+            .section-title{font-size:1.6rem!important;line-height:1.25}
+            .section-label{font-size:10px;letter-spacing:2px}
+
+            /* Triggers */
+            .trigger-item{padding:20px 16px}
+            .trigger-text{font-size:.88rem}
+            .trigger-truth{font-size:.88rem;padding:14px 16px}
+
+            /* Science */
+            .science-card{padding:24px 18px}
+            .science-icon{width:44px;height:44px}
+            .science-card h3{font-size:1.2rem}
+
+            /* Protocol steps */
+            .protocol-step{padding:28px 18px}
+            .step-number{font-size:2.2rem}
+            .protocol-step h3{font-size:1.2rem}
+
+            /* Inside grid */
+            .inside-card{padding:20px 16px}
+
+            /* Neuro */
+            .neuro-card{padding:20px 16px}
+
+            /* Brain change */
+            .brain-change{grid-template-columns:1fr!important;text-align:center;gap:8px!important}
+            .brain-arrow{transform:rotate(90deg)}
+
+            /* Comparison */
+            .comparison-grid{grid-template-columns:1fr!important}
+            .comparison-card{padding:28px 18px}
+
+            /* Testimonials */
+            .testimonial-card{padding:24px 18px}
+
+            /* Pricing */
+            .choice-grid{grid-template-columns:1fr!important;max-width:100%!important}
+            .choice-card{padding:28px 18px}
+            .choice-card.featured::before{font-size:9px;padding:4px 14px;top:-11px}
+            .choice-name{font-size:1.3rem}
+            .choice-desc{font-size:.84rem}
+            .choice-features li{font-size:.84rem}
+            .choice-price{font-size:1.7rem}
+            .choice-btn{font-size:11px;padding:14px}
+
+            /* Checklist */
+            .checklist-wrap{padding:60px 16px}
+            .cl-item{padding:12px 14px;gap:10px}
+            .cl-result{padding:18px 14px}
+
+            /* FAQ */
+            details.faq{padding:18px 16px}
+            details.faq summary{font-size:.9rem}
+            .faq-body{font-size:.86rem}
+
+            /* NY sections */
+            .ny-points{grid-template-columns:1fr!important}
+            .ny-formula{flex-direction:column!important}
+            .formula-arrow{transform:rotate(90deg)}
+            .manifestation-visual{flex-direction:column!important}
+            .manifestation-arrow{transform:rotate(90deg)}
+            .manifestation-explanation{grid-template-columns:1fr!important}
+            .manifestation-insight{flex-direction:column!important;text-align:center!important}
+            .ny-connection{flex-direction:column!important;text-align:center!important}
+            .manifestation-formula{flex-direction:column!important}
+            .formula-connector{transform:rotate(90deg)}
+
+            /* Sticky */
+            .sticky-mobile{display:block}
+            .sticky-mobile a{font-size:11px;padding:12px;letter-spacing:1px}
+
+            /* Images */
+            img{max-width:100%!important;height:auto!important}
+
+            /* Support card */
+            .support-card{flex-direction:column;text-align:center;align-items:center;padding:24px 16px!important}
+            .support-list{align-items:center}
+            .support-item{justify-content:center}
         }
 
         /* Sticky Mobile CTA */
@@ -1857,7 +1962,7 @@
         .sticky-mobile.show{transform:translateY(0)}
         .sticky-mobile a{display:block;padding:14px;background:var(--text-dark);color:var(--white);font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background .3s}
         .sticky-mobile a:hover{background:var(--accent-gold)}
-        @media(max-width:600px){.sticky-mobile{display:block}}
+        /* Sticky mobile responsive - handled in main queries */
     </style>
 </head>
 <body>
