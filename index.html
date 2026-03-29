@@ -26,8 +26,7 @@
         }
 
         html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            scroll-behavior: smooth;overflow-x:hidden;
         }
 
         body {
@@ -35,9 +34,7 @@
             background: var(--bg-cream);
             color: var(--text-dark);
             line-height: 1.7;
-            overflow-x: hidden;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            overflow-x:hidden;word-wrap:break-word;overflow-wrap:break-word;
         }
 
         h1, h2, h3, h4 {
@@ -75,8 +72,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
-            overflow: hidden;
+            padding:0 20px;overflow:hidden;
         }
 
         /* Hero Section */
@@ -209,7 +205,7 @@
 
         /* Triggers Section - стиль как у dobrozdravin */
         .triggers {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--white);
         }
 
@@ -285,19 +281,19 @@
 
         /* Problem Section */
         .problem {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--bg-cream);
         }
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr));
             gap: 24px;
             margin-top: 60px;
         }
 
         .problem-card {
-            padding: 40px;
+            padding:24px 16px;
             background: var(--white);
             border-left: 3px solid var(--accent-gold);
             transition: all 0.3s ease;
@@ -321,7 +317,7 @@
 
         /* Science Section with Infographic */
         .science {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--text-dark);
             color: var(--bg-cream);
         }
@@ -330,7 +326,7 @@
 
         .science-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 60px;
             margin-top: 60px;
         }
@@ -370,7 +366,7 @@
         .infographic {
             background: rgba(245, 240, 232, 0.05);
             border: 1px solid rgba(166, 139, 91, 0.3);
-            padding: 40px;
+            padding:24px 16px;
         }
 
         .infographic-title {
@@ -409,7 +405,7 @@
 
         .brain-change {
             display: grid;
-            grid-template-columns: 140px 1fr 80px;
+            grid-template-columns: 1fr;
             align-items: center;
             gap: 20px;
             padding: 16px 0;
@@ -455,7 +451,7 @@
 
         .research-row {
             display: grid;
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 1fr;
             gap: 20px;
             padding: 20px 0;
             border-bottom: 1px solid rgba(166, 139, 91, 0.2);
@@ -474,7 +470,7 @@
 
         /* Protocol Section */
         .protocol {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--bg-cream);
         }
 
@@ -588,7 +584,7 @@
 
         /* What's Inside */
         .inside {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--white);
         }
 
@@ -644,7 +640,7 @@
 
         /* Neuroscience Triggers Section */
         .neuro-triggers {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--bg-warm);
         }
 
@@ -657,7 +653,7 @@
 
         .neuro-card {
             background: var(--white);
-            padding: 40px;
+            padding:24px 16px;
             border-top: 3px solid var(--accent-gold);
         }
 
@@ -691,7 +687,7 @@
 
         .cortisol-bar {
             display: grid;
-            grid-template-columns: 100px 1fr 70px;
+            grid-template-columns: 1fr;
             align-items: center;
             gap: 12px;
         }
@@ -738,7 +734,7 @@
 
         /* Before/After Section */
         .before-after {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--bg-warm);
         }
 
@@ -752,7 +748,7 @@
 
         .comparison-card {
             background: var(--white);
-            padding: 40px;
+            padding:24px 16px;
             height: 100%;
         }
 
@@ -863,7 +859,7 @@
 
         /* New Year Block */
         .new-year-block {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: linear-gradient(180deg, var(--text-dark) 0%, #1a1408 100%);
             position: relative;
             overflow: hidden;
@@ -1083,7 +1079,7 @@
 
         /* Testimonials */
         .testimonials {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--bg-cream);
         }
 
@@ -1134,7 +1130,7 @@
 
         /* Pricing */
         .pricing {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: linear-gradient(180deg, var(--white) 0%, var(--bg-warm) 100%);
         }
 
@@ -1257,11 +1253,11 @@
         .choice-btn-primary:hover{background:var(--accent-gold)}
         .choice-btn-outline{background:transparent;border:1.5px solid var(--accent-gold);color:var(--accent-gold)}
         .choice-btn-outline:hover{background:var(--accent-gold);color:var(--white)}
-        /* Choice grid responsive - handled in main 900px query */
+
 
         /* FAQ Section - Expanded */
         .faq {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--white);
         }
 
@@ -1327,7 +1323,7 @@
 
         /* Final CTA */
         .final-cta {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: var(--text-dark);
             text-align: center;
         }
@@ -1366,7 +1362,7 @@
 
         /* Manifestation Section Styles */
         .manifestation-section {
-            padding: 100px 24px;
+            padding:80px 20px;
             background: linear-gradient(180deg, #1a1408 0%, var(--text-dark) 50%, #1a1408 100%);
             position: relative;
             overflow: hidden;
@@ -1418,7 +1414,7 @@
         .mind-state {
             background: rgba(245, 240, 232, 0.03);
             border: 1px solid rgba(139, 115, 85, 0.2);
-            padding: 40px;
+            padding:24px 16px;
             text-align: center;
             width: 280px;
             position: relative;
@@ -1552,7 +1548,7 @@
         .ny-connection {
             background: rgba(166, 139, 91, 0.1);
             border: 1px solid rgba(166, 139, 91, 0.3);
-            padding: 40px;
+            padding:24px 16px;
             display: flex;
             align-items: center;
             gap: 30px;
@@ -1577,7 +1573,7 @@
         .manifestation-quote {
             text-align: center;
             margin-bottom: 60px;
-            padding: 40px;
+            padding:24px 16px;
             background: rgba(166, 139, 91, 0.05);
             border-left: 3px solid var(--accent-gold);
         }
@@ -1711,7 +1707,7 @@
             margin: 0 auto;
             background: var(--white);
             border: 1px solid rgba(139, 115, 85, 0.2);
-            padding: 40px;
+            padding:24px 16px;
             display: flex;
             gap: 25px;
             align-items: flex-start;
@@ -1773,19 +1769,18 @@
             font-size: 16px;
         }
 
-        /* Support responsive - handled in main 600px query */
+
 
         /* Responsive */
         @media (max-width: 900px) {
             [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
-            [style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .science-grid { grid-template-columns: 1fr; }
             .protocol-steps { grid-template-columns: 1fr; }
             .inside-grid { grid-template-columns: 1fr; }
             .neuro-grid { grid-template-columns: 1fr; }
             .testimonial-grid { grid-template-columns: 1fr; }
-            .brain-change { grid-template-columns: 100px 1fr 60px; gap: 12px; }
+            .brain-change { grid-template-columns: 1fr; gap: 8px; }
             .comparison-grid { 
                 grid-template-columns: 1fr; 
                 gap: 30px;
@@ -1829,140 +1824,141 @@
             .formula-connector {
                 transform: rotate(90deg);
             }
-            .choice-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
-            .sticky-mobile{display:block}
         }
 
-        @media (max-width: 600px) {
-            .stats { grid-template-columns: 1fr 1fr; }
-            .pricing-card { padding: 28px 18px; }
-            .breathing-square { width: 200px; height: 200px; }
-            .ny-timeline {
-                flex-direction: column;
-                gap: 40px;
-                align-items: center;
-            }
-            .timeline-line {
-                display: none;
-            }
 
-            /* GLOBAL MOBILE FIX */
-            *{max-width:100vw}
-            .container{padding:0 16px;overflow:hidden}
-            section{overflow-x:hidden}
-
-            /* Force all inline grids to collapse */
-            [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
-            [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
-            [style*="grid-template-columns:repeat(5"]{grid-template-columns:repeat(2,1fr)!important}
-            [style*="gap:36px"]{gap:16px!important}
-            [style*="gap:48px"]{gap:20px!important}
-            [style*="gap:64px"]{gap:24px!important}
-
-            /* Hero */
-            .hero{padding:80px 16px 60px;min-height:100svh}
-            .hero h1{font-size:2.4rem;margin-bottom:18px}
-            .hero-badge{font-size:9px;letter-spacing:2px;margin-bottom:24px}
-            .hero-subtitle{font-size:.95rem;margin-bottom:32px;max-width:100%}
-            .cta-button{padding:16px 28px;font-size:12px;letter-spacing:.5px;width:100%;justify-content:center}
-
-            /* Stats */
-            .stats{grid-template-columns:1fr 1fr}
-            .stat-item{padding:28px 12px}
-            .stat-number{font-size:2rem}
-            .stat-label{font-size:10px}
-
-            /* Trust bar */
-            [style*="gap:36px"][style*="flex-wrap"]{gap:12px!important;flex-direction:column!important}
-
-            /* Sections */
-            .section-header{margin-bottom:32px}
-            .section-title{font-size:1.6rem!important;line-height:1.25}
-            .section-label{font-size:10px;letter-spacing:2px}
-
-            /* Triggers */
-            .trigger-item{padding:20px 16px}
-            .trigger-text{font-size:.88rem}
-            .trigger-truth{font-size:.88rem;padding:14px 16px}
-
-            /* Science */
-            .science-card{padding:24px 18px}
-            .science-icon{width:44px;height:44px}
-            .science-card h3{font-size:1.2rem}
-
-            /* Protocol steps */
-            .protocol-step{padding:28px 18px}
-            .step-number{font-size:2.2rem}
-            .protocol-step h3{font-size:1.2rem}
-
-            /* Inside grid */
-            .inside-card{padding:20px 16px}
-
-            /* Neuro */
-            .neuro-card{padding:20px 16px}
-
-            /* Brain change */
-            .brain-change{grid-template-columns:1fr!important;text-align:center;gap:8px!important}
-            .brain-arrow{transform:rotate(90deg)}
-
-            /* Comparison */
-            .comparison-grid{grid-template-columns:1fr!important}
-            .comparison-card{padding:28px 18px}
-
-            /* Testimonials */
-            .testimonial-card{padding:24px 18px}
-
-            /* Pricing */
-            .choice-grid{grid-template-columns:1fr!important;max-width:100%!important}
-            .choice-card{padding:28px 18px}
-            .choice-card.featured::before{font-size:9px;padding:4px 14px;top:-11px}
-            .choice-name{font-size:1.3rem}
-            .choice-desc{font-size:.84rem}
-            .choice-features li{font-size:.84rem}
-            .choice-price{font-size:1.7rem}
-            .choice-btn{font-size:11px;padding:14px}
-
-            /* Checklist */
-            .checklist-wrap{padding:60px 16px}
-            .cl-item{padding:12px 14px;gap:10px}
-            .cl-result{padding:18px 14px}
-
-            /* FAQ */
-            details.faq{padding:18px 16px}
-            details.faq summary{font-size:.9rem}
-            .faq-body{font-size:.86rem}
-
-            /* NY sections */
-            .ny-points{grid-template-columns:1fr!important}
-            .ny-formula{flex-direction:column!important}
-            .formula-arrow{transform:rotate(90deg)}
-            .manifestation-visual{flex-direction:column!important}
-            .manifestation-arrow{transform:rotate(90deg)}
-            .manifestation-explanation{grid-template-columns:1fr!important}
-            .manifestation-insight{flex-direction:column!important;text-align:center!important}
-            .ny-connection{flex-direction:column!important;text-align:center!important}
-            .manifestation-formula{flex-direction:column!important}
-            .formula-connector{transform:rotate(90deg)}
-
-            /* Sticky */
-            .sticky-mobile{display:block}
-            .sticky-mobile a{font-size:11px;padding:12px;letter-spacing:1px}
-
-            /* Images */
-            img{max-width:100%!important;height:auto!important}
-
-            /* Support card */
-            .support-card{flex-direction:column;text-align:center;align-items:center;padding:24px 16px!important}
-            .support-list{align-items:center}
-            .support-item{justify-content:center}
-        }
 
         /* Sticky Mobile CTA */
         .sticky-mobile{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:rgba(245,240,232,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:12px 20px;box-shadow:0 -4px 20px rgba(44,36,22,.08);border-top:1px solid rgba(139,115,85,.15);text-align:center;transform:translateY(100%);transition:transform .4s}
         .sticky-mobile.show{transform:translateY(0)}
         .sticky-mobile a{display:block;padding:14px;background:var(--text-dark);color:var(--white);font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background .3s}
         .sticky-mobile a:hover{background:var(--accent-gold)}
-        /* Sticky mobile responsive - handled in main queries */
+
+
+/* ===== NUCLEAR MOBILE FIX ===== */
+@media(max-width:768px){
+  html,body{overflow-x:hidden!important;width:100%!important;max-width:100vw!important}
+  *:not(script):not(style){max-width:100vw!important}
+  .container{padding:0 16px!important;overflow:hidden!important;width:100%!important}
+  section{overflow:hidden!important;width:100%!important}
+  img,svg,video{max-width:100%!important;height:auto!important}
+
+  /* HERO */
+  .hero{padding:70px 16px 40px!important;min-height:90svh!important}
+  .hero h1{font-size:2.2rem!important}
+  .hero-badge{font-size:9px!important;letter-spacing:2px!important}
+  .hero-subtitle{font-size:.9rem!important;max-width:100%!important}
+  .cta-button{padding:14px 20px!important;font-size:11px!important;width:100%!important;justify-content:center!important;letter-spacing:.5px!important}
+
+  /* STATS */
+  .stats{grid-template-columns:1fr 1fr!important}
+  .stat-item{padding:20px 10px!important}
+  .stat-number{font-size:1.6rem!important}
+  .stat-label{font-size:9px!important;letter-spacing:.5px!important}
+
+  /* TRUST BAR - force vertical */
+  [style*="gap:36px"][style*="flex-wrap"]{flex-direction:column!important;gap:8px!important;align-items:flex-start!important}
+
+  /* SCIENCE - THE PROBLEM SECTION */
+  .science{padding:50px 16px!important;width:100%!important}
+  .science-grid{grid-template-columns:1fr!important;gap:28px!important}
+  .science-text h3{font-size:1.2rem!important}
+  .science-text p{font-size:13px!important;line-height:1.7!important}
+  .science-quote{font-size:1rem!important;padding-left:12px!important;margin:20px 0!important}
+  .infographic{padding:16px 12px!important;width:100%!important}
+  .infographic-title{font-size:10px!important;letter-spacing:1px!important}
+  .brain-visual{margin-bottom:16px!important}
+  .brain-svg{max-width:200px!important}
+
+  /* BRAIN CHANGES - was 140px 1fr 80px, now 1fr */
+  .brain-changes{gap:12px!important}
+  .brain-change{grid-template-columns:1fr!important;gap:4px!important;padding:10px 0!important}
+  .brain-area{font-size:12px!important;font-weight:600!important}
+  .brain-bar{height:6px!important;margin:4px 0!important}
+  .brain-result{text-align:left!important;font-size:11px!important}
+
+  /* RESEARCH TABLE - was 200px 1fr, now 1fr */
+  .research-table{margin-top:24px!important}
+  .research-row{grid-template-columns:1fr!important;gap:4px!important;padding:12px 0!important}
+  .research-source{font-size:11px!important;font-weight:600!important}
+  .research-finding{font-size:12px!important}
+
+  /* SECTION HEADERS */
+  .section-header{margin-bottom:24px!important}
+  .section-title{font-size:1.4rem!important;line-height:1.25!important}
+  .section-label{font-size:9px!important;letter-spacing:1.5px!important}
+
+  /* TRIGGERS */
+  .triggers{padding:50px 16px!important}
+  .trigger-item{padding:16px 12px!important}
+  .trigger-text{font-size:.84rem!important}
+  .trigger-truth{font-size:.84rem!important;padding:12px!important}
+  .trigger-icon{width:26px!important;height:26px!important;min-width:26px!important;font-size:13px!important}
+
+  /* ALL GRIDS → 1 COLUMN */
+  .protocol-steps,.inside-grid,.neuro-grid,.testimonial-grid,.comparison-grid,.ny-points,.manifestation-explanation{grid-template-columns:1fr!important}
+
+  /* PROTOCOL STEPS */
+  .protocol-step{padding:20px 14px!important}
+  .step-number{font-size:1.8rem!important}
+  .protocol-step h3{font-size:1.05rem!important}
+  .protocol-step p{font-size:.84rem!important}
+
+  /* CARDS */
+  .inside-card,.neuro-card{padding:16px 12px!important}
+  .comparison-card{padding:20px 14px!important}
+  .testimonial-card{padding:18px 14px!important}
+  .testimonial-card p{font-size:.86rem!important}
+
+  /* CHOICE/PRICING */
+  .choice-grid{grid-template-columns:1fr!important;max-width:100%!important;gap:14px!important}
+  .choice-card{padding:24px 16px!important}
+  .choice-card.featured::before{font-size:8px!important;padding:3px 10px!important;top:-10px!important}
+  .choice-name{font-size:1.15rem!important}
+  .choice-desc{font-size:.8rem!important}
+  .choice-features li{font-size:.8rem!important;padding:5px 0 5px 18px!important}
+  .choice-price{font-size:1.5rem!important}
+  .choice-btn{font-size:10px!important;padding:12px!important}
+
+  /* CHECKLIST */
+  .checklist-wrap{padding:40px 16px!important}
+  .cl-item{padding:10px!important;gap:8px!important}
+  .cl-box{width:18px!important;height:18px!important}
+
+  /* FAQ */
+  details.faq{padding:14px 12px!important}
+  details.faq summary{font-size:.86rem!important}
+  .faq-body{font-size:.82rem!important}
+
+  /* NY SECTIONS */
+  .ny-formula,.manifestation-visual,.manifestation-formula{flex-direction:column!important}
+  .formula-arrow,.manifestation-arrow,.formula-connector{transform:rotate(90deg)!important}
+  .ny-connection,.manifestation-insight{flex-direction:column!important;text-align:center!important}
+  .ny-timeline{flex-direction:column!important;gap:24px!important}
+  .timeline-line{display:none!important}
+
+  /* SUPPORT */
+  .support-card{flex-direction:column!important;text-align:center!important;padding:18px 12px!important}
+  .support-list{align-items:center!important}
+  .support-item{justify-content:center!important}
+
+  /* BREATHING */
+  .breathing-square{width:160px!important;height:160px!important}
+
+  /* FORCE ALL INLINE GRIDS */
+  [style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  [style*="gap:60px"],[style*="gap:64px"],[style*="gap:48px"],[style*="gap:36px"]{gap:16px!important}
+  [style*="padding:40px"],[style*="padding:50px"],[style*="padding:60px"]{padding:20px 14px!important}
+  [style*="padding: 40px"],[style*="padding: 50px"],[style*="padding: 60px"]{padding:20px 14px!important}
+
+  /* STICKY */
+  .sticky-mobile{display:block!important}
+  .sticky-mobile a{font-size:10px!important;padding:11px!important;letter-spacing:1px!important}
+
+  /* PRICING CARD */
+  .pricing-card{padding:24px 16px!important}
+}
+
     </style>
 </head>
 <body>
