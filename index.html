@@ -1838,9 +1838,9 @@
 /* ===== NUCLEAR MOBILE FIX ===== */
 @media(max-width:768px){
   html,body{overflow-x:hidden!important;width:100%!important;max-width:100vw!important}
-  *:not(script):not(style){max-width:100vw!important}
+  *:not(script):not(style){max-width:100%!important;box-sizing:border-box!important;word-wrap:break-word!important;overflow-wrap:break-word!important}
   .container{padding:0 16px!important;overflow:hidden!important;width:100%!important}
-  section{overflow:hidden!important;width:100%!important}
+  section,.science,.triggers,.checklist-wrap,.new-year-block,.manifestation-section{overflow:hidden!important;width:100%!important}
   img,svg,video{max-width:100%!important;height:auto!important}
 
   /* HERO */
@@ -1863,8 +1863,9 @@
   .science{padding:50px 16px!important;width:100%!important}
   .science-grid{grid-template-columns:1fr!important;gap:28px!important}
   .science-text h3{font-size:1.2rem!important}
-  .science-text p{font-size:13px!important;line-height:1.7!important}
-  .science-quote{font-size:1rem!important;padding-left:12px!important;margin:20px 0!important}
+  .science-text p{font-size:13px!important;line-height:1.7!important;word-wrap:break-word!important}
+  .science-quote{font-size:1rem!important;padding-left:12px!important;margin:20px 0!important;word-wrap:break-word!important}
+  .science-quote cite{font-size:10px!important}
   .infographic{padding:16px 12px!important;width:100%!important}
   .infographic-title{font-size:10px!important;letter-spacing:1px!important}
   .brain-visual{margin-bottom:16px!important}
@@ -1931,11 +1932,36 @@
   .faq-body{font-size:.82rem!important}
 
   /* NY SECTIONS */
-  .ny-formula,.manifestation-visual,.manifestation-formula{flex-direction:column!important}
+  .ny-formula,.manifestation-visual,.manifestation-formula{flex-direction:column!important;align-items:center!important}
   .formula-arrow,.manifestation-arrow,.formula-connector{transform:rotate(90deg)!important}
   .ny-connection,.manifestation-insight{flex-direction:column!important;text-align:center!important}
-  .ny-timeline{flex-direction:column!important;gap:24px!important}
+  .ny-timeline{flex-direction:column!important;gap:24px!important;align-items:center!important;padding:0!important}
   .timeline-line{display:none!important}
+  .timeline-item{align-items:center!important;text-align:center!important;width:100%!important}
+  .timeline-content{align-items:center!important;text-align:center!important}
+
+  /* NY BLOCK CENTERING */
+  .new-year-block{text-align:center!important}
+  .ny-content{text-align:center!important}
+  .ny-header{text-align:center!important}
+  .ny-header .section-label{text-align:center!important}
+  .ny-header .section-title{text-align:center!important}
+  .ny-subtitle{text-align:center!important}
+  .ny-points{grid-template-columns:1fr!important;text-align:center!important}
+  .ny-point{text-align:center!important}
+  .formula-item{text-align:center!important}
+  .formula-text{text-align:center!important}
+
+  /* ALL SECTION HEADERS CENTER ON MOBILE */
+  .section-header{text-align:center!important}
+  .section-label{text-align:center!important}
+  .section-title{text-align:center!important}
+
+  /* MANIFESTATION SECTION */
+  .manifestation-section{text-align:center!important}
+  .manifestation-section .section-header{text-align:center!important}
+  .manifestation-explanation{text-align:center!important}
+  .manifestation-quote{text-align:center!important}
 
   /* SUPPORT */
   .support-card{flex-direction:column!important;text-align:center!important;padding:18px 12px!important}
