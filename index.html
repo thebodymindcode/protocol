@@ -180,6 +180,8 @@ h3{font-size:clamp(22px,2.6vw,28px)}
 .diag-result.show{display:block}
 .diag-result b{color:var(--ink)}
 </style>
+<link rel="preload" as="image" href="images/hero.webp" media="(min-width:761px)">
+<link rel="preload" as="image" href="images/hero-m.webp" media="(max-width:760px)">
 </head>
 <body>
 
@@ -190,7 +192,7 @@ h3{font-size:clamp(22px,2.6vw,28px)}
 
 <!-- HERO -->
 <section class="hero dark" id="top">
-  <div class="hero-media"><img src="images/hero.png" alt="Утренняя практика тишины" fetchpriority="high"></div>
+  <div class="hero-media"><img src="images/hero.webp" alt="Утренняя практика тишины" fetchpriority="high" decoding="async"></div>
   <div class="hero-inner">
     <div class="hero-copy reveal">
       <div class="label">Программа «Архитектура сознания»</div>
@@ -204,7 +206,7 @@ h3{font-size:clamp(22px,2.6vw,28px)}
         <span>388 участников</span><span>15&#8209;20 минут в день</span><span>Научная база</span><span>Доступ навсегда</span>
       </div>
     </div>
-    <div class="hero-photo-m" aria-hidden="true"><img src="images/hero.png" alt=""></div>
+    <div class="hero-photo-m" aria-hidden="true"><img src="images/hero-m.webp" alt="" decoding="async"></div>
     <div class="hero-stats reveal">
       <div><b>47%</b><i>времени мы «не&nbsp;здесь»</i></div>
       <div><b>6000+</b><i>мыслей в день генерирует мозг</i></div>
@@ -377,7 +379,7 @@ h3{font-size:clamp(22px,2.6vw,28px)}
           <i>Killingsworth &amp; Gilbert · Science · 2010</i>
         </div>
       </div>
-      <div class="sci-img reveal"><img src="images/neuro.png" alt="Нейронные связи мозга" loading="lazy"></div>
+      <div class="sci-img reveal"><img src="images/neuro.webp" alt="Нейронные связи мозга" loading="lazy" decoding="async"></div>
     </div>
 
     <div class="brain-wrap reveal">
@@ -630,7 +632,7 @@ h3{font-size:clamp(22px,2.6vw,28px)}
 }
 .seq b{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;font-weight:600}
 .silence-band{position:relative;border-radius:26px;overflow:hidden;margin-top:56px;box-shadow:var(--shadow-lg);
-  min-height:380px;background:var(--dark) url("images/silence.png") center/cover no-repeat}
+  min-height:380px;background:var(--dark) url("images/silence.webp") center/cover no-repeat}
 .silence-band .over{
   position:relative;display:flex;flex-direction:column;justify-content:center;min-height:380px;padding:40px 56px;
   background:linear-gradient(90deg,rgba(37,29,18,.82),rgba(37,29,18,.28));
