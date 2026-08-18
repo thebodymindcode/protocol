@@ -2011,6 +2011,73 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .section-label{text-align:center!important;display:block}
 .section-title{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
 .section-header p{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+
+/* ─── Распродажа: ленточка, промокод, счётчик (18.08.2026) ──────────────
+   Стоит в первом экране, до кнопки покупки. Цены и кнопки оплаты на
+   странице не тронуты: скидку человек получает промокодом на оплате.
+   На телефоне блок складывается в одну колонку, промокод остаётся
+   крупным и нажимается пальцем. */
+.sale-box{position:relative;margin:26px auto 0;max-width:640px;width:100%;
+  background:#FCF5EF;border:1px solid #E8562D33;border-radius:6px;
+  overflow:hidden;opacity:0;animation:fadeUp .8s ease .75s forwards}
+.sale-lenta{background:linear-gradient(100deg,#E8562D,#C7401C);
+  padding:9px 16px;text-align:center}
+.sale-lenta span{color:#fff;font-weight:800;font-size:.82rem;
+  letter-spacing:.16em;text-transform:uppercase}
+.sale-in{padding:18px 20px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;flex-wrap:wrap}
+.sale-tm{display:flex;flex-direction:column;gap:6px;text-align:left}
+.sale-tm-lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#2C241699;font-weight:700}
+.sale-tm-val{display:flex;align-items:baseline;gap:3px;font-variant-numeric:tabular-nums}
+.sale-tm-val b{font-size:1.5rem;font-weight:800;color:#C7401C;line-height:1}
+.sale-tm-val i{font-style:normal;font-size:.76rem;color:#2C241688;margin-right:7px}
+.sale-promo{display:flex;flex-direction:column;gap:6px;text-align:left;min-width:0}
+.sale-promo-lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#2C241699;font-weight:700}
+.sale-code{display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  background:#fff;border:1.5px dashed #E8562D;border-radius:5px;
+  padding:9px 14px;font-family:inherit;font-size:1.06rem;font-weight:800;
+  letter-spacing:.06em;color:#C7401C;transition:.25s}
+.sale-code:hover{background:#E8562D12}
+.sale-code.ok{background:#E8562D;color:#fff;border-style:solid}
+.sale-hint{font-size:.76rem;color:#2C241688;line-height:1.4;max-width:280px}
+@media(max-width:640px){
+  .sale-box{margin-top:22px;border-radius:5px}
+  .sale-lenta{padding:8px 14px}
+  .sale-lenta span{font-size:.76rem;letter-spacing:.12em}
+  .sale-in{padding:15px 16px;flex-direction:column;align-items:stretch;gap:14px}
+  .sale-tm,.sale-promo{text-align:center;align-items:center}
+  .sale-tm-val b{font-size:1.55rem}
+  .sale-code{width:100%;justify-content:center;padding:13px 14px;font-size:1.12rem;min-height:48px}
+  .sale-hint{max-width:100%;text-align:center;font-size:.8rem}
+}
+
+/* ─── Распродажа у кнопки покупки (18.08.2026) ──────────────────────────
+   Второй такой же блок стоит там, где человек уже решился платить: здесь
+   важнее всего, чтобы он заметил промокод и понял, что вводить его нужно
+   на странице оплаты, а не здесь. */
+.sale-pay{margin:0 auto 20px;max-width:520px;width:100%;
+  border:1.5px solid #E8562D33;border-radius:6px;overflow:hidden;background:#FFF6F2}
+.sale-pay-lenta{background:linear-gradient(100deg,#E8562D,#C7401C);color:#fff;
+  padding:9px 14px;text-align:center;font-size:.8rem;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase}
+.sale-pay-lenta b{font-size:.95rem}
+.sale-pay-in{padding:16px 18px;display:flex;flex-direction:column;gap:11px;align-items:center}
+.sale-pay-code{display:flex;align-items:center;gap:10px}
+.sp-lbl{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;opacity:.6}
+.sale-code2{font-size:1.15rem;padding:10px 16px}
+.sale-pay-txt{font-size:.86rem;line-height:1.5;text-align:center;opacity:.85;max-width:400px}
+.sale-pay-txt b{font-weight:800}
+@media(max-width:640px){
+  .sale-pay{margin-bottom:16px}
+  .sale-pay-lenta{font-size:.74rem;padding:8px 12px;letter-spacing:.08em}
+  .sale-pay-in{padding:14px 15px;gap:10px}
+  .sale-pay-code{flex-direction:column;gap:7px;width:100%}
+  .sale-code2{width:100%;justify-content:center;min-height:50px;font-size:1.16rem}
+  .sale-pay-txt{font-size:.88rem;max-width:100%}
+}
 </style>
 </head>
 <body>
@@ -2947,7 +3014,37 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  </ul>
  <div class="choice-price"><span class="old">5 900 ₽</span> 2 990 ₽</div>
  <div class="choice-price-note">Одноразовый платёж · Вечный доступ</div>
- <a href="https://payform.ru/poa2szv/" class="choice-btn choice-btn-primary">Начать протокол →</a>
+ <!-- РАСПРОДАЖА -->
+    <div class="sale-box" id="saleBox">
+      <div class="sale-lenta"><span>Распродажа −20%</span></div>
+      <div class="sale-in">
+        <div class="sale-tm" id="saleTimer" aria-live="polite">
+          <span class="sale-tm-lbl">До конца акции</span>
+          <span class="sale-tm-val">
+            <b id="sD">0</b><i>дн</i><b id="sH">00</b><i>ч</i><b id="sM">00</b><i>м</i><b id="sS">00</b><i>с</i>
+          </span>
+        </div>
+        <!-- РАСПРОДАЖА У КНОПКИ ПОКУПКИ -->
+      <div class="sale-pay">
+        <div class="sale-pay-lenta">Распродажа −20% · осталось <b id="sD2">4</b> <span id="sW2">дня</span></div>
+        <div class="sale-pay-in">
+          <div class="sale-pay-code">
+            <span class="sp-lbl">Промокод</span>
+            <button type="button" class="sale-code sale-code2" data-code="sale20">sale20<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
+          </div>
+          <div class="sale-pay-txt"><b>Введите его на странице оплаты</b>, в поле «Промокод». Сумма пересчитается сразу. Без промокода спишется полная цена.</div>
+        </div>
+      </div>
+
+      <div class="sale-promo">
+          <span class="sale-promo-lbl">Промокод</span>
+          <button type="button" class="sale-code" id="saleCode" data-code="sale20">sale20<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
+          <span class="sale-hint">Введите его на странице оплаты, сумма пересчитается сразу</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://payform.ru/poa2szv/" class="choice-btn choice-btn-primary">Начать протокол →</a>
  </div>
 
  <!-- Path 3: Not ready yet, still converts -->
@@ -3211,5 +3308,102 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 
  <div class="sticky-mobile" id="stickyMobile"><a href="https://payform.ru/poa2szv/">Получить доступ →</a></div>
+
+<script>
+/* Счётчик до конца распродажи и копирование промокода.
+   Время конца задано с часовым поясом, поэтому у всех считается одинаково. */
+(function(){
+  var konec = new Date("2026-08-22T23:59:59+03:00").getTime();
+  var box = document.getElementById('saleBox');
+  function dva(n){ return n<10 ? '0'+n : ''+n; }
+  function tik(){
+    var ost = konec - Date.now();
+    if(ost <= 0){ if(box) box.style.display='none'; return; }
+    var s = Math.floor(ost/1000);
+    var d = Math.floor(s/86400), h = Math.floor(s%86400/3600),
+        m = Math.floor(s%3600/60), sec = s%60;
+    var e;
+    if(e=document.getElementById('sD')) e.textContent = d;
+    if(e=document.getElementById('sH')) e.textContent = dva(h);
+    if(e=document.getElementById('sM')) e.textContent = dva(m);
+    if(e=document.getElementById('sS')) e.textContent = dva(sec);
+  }
+  tik(); setInterval(tik, 1000);
+
+  var knopka = document.getElementById('saleCode');
+  if(knopka){
+    knopka.addEventListener('click', function(){
+      var kod = knopka.getAttribute('data-code');
+      var gotovo = function(){
+        var bylo = knopka.firstChild.nodeValue;
+        knopka.firstChild.nodeValue = 'Скопирован';
+        knopka.classList.add('ok');
+        setTimeout(function(){
+          knopka.firstChild.nodeValue = bylo;
+          knopka.classList.remove('ok');
+        }, 1600);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(kod).then(gotovo, gotovo);
+      } else {
+        var p = document.createElement('textarea');
+        p.value = kod; document.body.appendChild(p); p.select();
+        try{ document.execCommand('copy'); }catch(e){}
+        document.body.removeChild(p); gotovo();
+      }
+    });
+  }
+})();
+</script>
+
+<script>
+/* Нижняя ленточка: показываем, сколько дней осталось, и склоняем слово.
+   Копирование промокода работает и на второй кнопке. */
+(function(){
+  var konec=new Date("2026-08-22T23:59:59+03:00").getTime();
+  function slovo(d){
+    var o=d%10,s=d%100;
+    if(s>=11&&s<=14) return 'дней';
+    if(o===1) return 'день';
+    if(o>=2&&o<=4) return 'дня';
+    return 'дней';
+  }
+  function tik(){
+    var ost=konec-Date.now();
+    if(ost<=0){
+      document.querySelectorAll('.sale-pay,.sale-box').forEach(function(e){e.style.display='none'});
+      return;
+    }
+    var d=Math.floor(ost/86400000), e;
+    if(d===0){ var ch=Math.floor(ost/3600000);
+      if(e=document.getElementById('sD2')) e.textContent=ch;
+      if(e=document.getElementById('sW2')) e.textContent=(ch%10===1&&ch%100!==11?'час':(ch%10>=2&&ch%10<=4&&(ch%100<12||ch%100>14)?'часа':'часов'));
+      return; }
+    if(e=document.getElementById('sD2')) e.textContent=d;
+    if(e=document.getElementById('sW2')) e.textContent=slovo(d);
+  }
+  tik(); setInterval(tik,60000);
+
+  document.querySelectorAll('.sale-code2').forEach(function(k){
+    k.addEventListener('click',function(){
+      var kod=k.getAttribute('data-code');
+      var gotovo=function(){
+        var bylo=k.firstChild.nodeValue;
+        k.firstChild.nodeValue='Скопирован';
+        k.classList.add('ok');
+        setTimeout(function(){k.firstChild.nodeValue=bylo;k.classList.remove('ok')},1600);
+      };
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(kod).then(gotovo,gotovo);
+      } else {
+        var p=document.createElement('textarea');p.value=kod;
+        document.body.appendChild(p);p.select();
+        try{document.execCommand('copy')}catch(e){}
+        document.body.removeChild(p);gotovo();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
